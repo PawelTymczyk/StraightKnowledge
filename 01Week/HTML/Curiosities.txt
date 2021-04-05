@@ -7,25 +7,22 @@ prosta geolokacja za pomocą użycia js
 
 
 Zmienione html4 vs html5:
-<applet>			Changed to <object>
-<acronym>			Changed to <abbr>
-<dir>				Changed to <ul>
-<frameset>		Removed
-<frame>			Removed
-<noframes>		Removed
-<strike>			No new tag. CSS is used for this
-<big>				No new tag. CSS is used for this
-<basefont>			No new tag. CSS is used for this
-<font>				No new tag. CSS is used for this
-<center>			No new tag. CSS is used for this
-<tt>				No new tag. CSS is used for thi
+<applet>			        Changed to <object>
+<acronym>			        Changed to <abbr>
+<dir>				        Changed to <ul>
+<frameset>		Removed     No new tag.
+<frame>			Removed     No new tag.
+<noframes>		Removed     No new tag.
+<strike>		Removed	    No new tag. CSS is used for this
+<big>			Removed	    No new tag. CSS is used for this
+<basefont>		Removed	    No new tag. CSS is used for this
+<font>			Removed	    No new tag. CSS is used for this
+<center>		Removed	    No new tag. CSS is used for this
+<tt>			Removed	    No new tag. CSS is used for thi
 
 
 
-https://www.w3schools.com/tags/tag_area.asp
-za co może odpowiadać coords, wydaje mi się, że za pixele ale nie mam pewności na podstawie niektórych testów ...
-
-
+SELECTORS:
 
 <a> - 
 tag który jest użyty podstawowo jest czerwony ???
@@ -37,8 +34,8 @@ abbreviation - skrót
 aside - niezależnie
 audio - just audio
 
-base - jest używany w headzie - domyślmy head
-
+"base" - jest używany w headzie - domyślmy head
+"button" - czy warto zapamiętać tutaj wszystkie atrybuty jak np formtarget   ???
 "br" - breaks the line
 
 "capition" exist only in table 0 defines table caiotion- titles columns
@@ -61,38 +58,29 @@ tekst w elemencie "cite" - jest defaultowo wyświetlany kursywą i jest "na pewi
 "iframe" - o co w sumie z tym chodzi ???
 
 
+"link" - do załączenia innych plików typu js css w headzie
+
+"main" - jaki jest sens używania tego selectora, bo nie za bardzo rozumiem, ani żadnego formatowania ani żadnych innych styli, a dodatkowych propery też nie ma ... ???
+"meta" - występuje tylko w head i określa meta ustawienia dokumentu html jak kodowanie np. ...
+
+"p" - co ciekawe nie można napisać paragrafu w paragrafie - najlepiej używać tylko w komponentach najniższego poziomu ..., bo inaczej możę się chyba coś blokować
+
+"section" - nie rozumiem, dlaczego i kiedy jest lepiej użyć section od diva zwykłego ???
+
+"textarea" - do czego tam służy wrap, bo nie za bardzo rozumiem
+
+
+
 HTM - język rozszerzeznia jest często obsługiwan w starszych systemach ... Może przechowywać referencje do przeróżnych plików 	
 
 
-inherit - dziedziczenie przy font - style sie pojawiło
+inherit - dziedziczenie przy font-style sie pojawiło
 
-https://www.w3schools.com/tags/tag_img.asp
-https://www.w3schools.com/tags/tag_input.asp
-https://www.w3schools.com/tags/tag_ins.asp
-https://www.w3schools.com/tags/tag_kbd.asp
-https://www.w3schools.com/tags/tag_label.asp
-https://www.w3schools.com/tags/tag_legend.asp
-https://www.w3schools.com/tags/tag_li.asp
-https://www.w3schools.com/tags/tag_link.asp
-https://www.w3schools.com/tags/tag_div.asp
-https://www.w3schools.com/tags/tag_button.asp
+Pozycjonowanie stron w przeglądarce zależy między innymi od title? - w jaki sposób to pomaga - były protipy, żeby np nie były to tylko hasła i żeby były jak najbadziej dokładne do treści najlepsze tytuły mają około 50-60 znaków
 
 
-
-NOT SUPPERTED in HTML5
-- acronym
-- applet - co to jest aplet - w sumie średnio rozumiem - jakiś konkratny selector który ma konkretne stylowanie? - tak przynajmniej zrozumiałem?
-- basefont
-- big
-- center
-- dir
-- font
-- frame
-- frameset
-- noframes
-- strike
-- tt
-
+https://www.w3schools.com/tags/tag_area.asp
+za co może odpowiadać coords, wydaje mi się, że za pixele ale nie mam pewności na podstawie niektórych testów ...
 
 O co chodzi z chromium, bo wydaje mi się, że używamy jej przy testach, a jest tylko inną przeglądarką google chroma z open soursem.
 Jaki jest sens używania article - służy tlko i wyłącznie o wyróżnienia testu, który sam w sobie pełni wartość? - jaką to ma wartość dla mnie? - sry, nie rozumiem - to zemu się pojawia wtedy kiedy się pojawia???
@@ -100,4 +88,12 @@ Jaki jest sens używania article - służy tlko i wyłącznie o wyróżnienia te
 https://www.w3schools.com/cssref/css_default_values.asp
 znalazłem podstawowe ustawienia każdego ze znaczników w html5
 
+
 Czy dodatkowe atrybuty są dla wszystkich znaczników takie same ??? 
+
+
+https://www.w3schools.com/tags/default.asp
+WAŻNE:
+https://www.w3schools.com/tags/tag_map.asp
+https://www.w3schools.com/tags/tag_track.asp
+https://www.w3schools.com/tags/tag_pre.asp

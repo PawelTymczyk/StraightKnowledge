@@ -1,0 +1,103 @@
+html5 wspiera już źródło audio i video
+dopuszcza skrypty js w tle
+używa baz sql zamiast cookie
+dopuszcza efekty drag and drop
+dużo bardziej przystosowany pod mobilkę
+prosta geolokacja za pomocą użycia js
+
+
+Zmienione html4 vs html5:
+<applet>			Changed to <object>
+<acronym>			Changed to <abbr>
+<dir>				Changed to <ul>
+<frameset>		Removed
+<frame>			Removed
+<noframes>		Removed
+<strike>			No new tag. CSS is used for this
+<big>				No new tag. CSS is used for this
+<basefont>			No new tag. CSS is used for this
+<font>				No new tag. CSS is used for this
+<center>			No new tag. CSS is used for this
+<tt>				No new tag. CSS is used for thi
+
+
+
+https://www.w3schools.com/tags/tag_area.asp
+za co może odpowiadać coords, wydaje mi się, że za pixele ale nie mam pewności na podstawie niektórych testów ...
+
+
+
+<a> - 
+tag który jest użyty podstawowo jest czerwony ???
+z bezpośredniego linku można też pobierać dokumenty za pomocą "download"
+"media" służy jako mini odnośnik do przekierowania do wewnętrzej domeny
+"target" otwiera w preferowanym oknie dany link
+
+abbreviation - skrót
+aside - niezależnie
+audio - just audio
+
+base - jest używany w headzie - domyślmy head
+
+"br" - breaks the line
+
+"capition" exist only in table 0 defines table caiotion- titles columns
+tekst w elemencie "cite" - jest defaultowo wyświetlany kursywą i jest "na pewien sposó selektorem tekstu" - w jaki sposób dla mnie jest to użyteczne ??? 	
+"colgroup" - określa styl stylowaniu kolumn w tabeli - exist only in table
+
+"datalist" i "data" - podobne do dop downa - czy to się różni w sumie w użyciu - lepszy scraping danych chyba nie tylko to powinno być   ???
+"del" - selector który oznacza prekreślony tekst
+"dl" - description list ; "dt" - descriptionterms ; "dd" - descrition details   -   for what ???
+
+"embed" - po co to jest, bo w sumie to nie rozumiem
+
+"fieldset" - grupuje znaczniki w formularzu co mi to daje ???
+"figcapition" - define capition of image
+"form" - co mi daje -method- w formie - informuje tylko o sposobie przesyłu danych?
+"form" - oninput - output - jak często coś takiego się używa?
+
+"hr" - pozioma linia po prostu
+
+"iframe" - o co w sumie z tym chodzi ???
+
+
+HTM - język rozszerzeznia jest często obsługiwan w starszych systemach ... Może przechowywać referencje do przeróżnych plików 	
+
+
+inherit - dziedziczenie przy font - style sie pojawiło
+
+https://www.w3schools.com/tags/tag_img.asp
+https://www.w3schools.com/tags/tag_input.asp
+https://www.w3schools.com/tags/tag_ins.asp
+https://www.w3schools.com/tags/tag_kbd.asp
+https://www.w3schools.com/tags/tag_label.asp
+https://www.w3schools.com/tags/tag_legend.asp
+https://www.w3schools.com/tags/tag_li.asp
+https://www.w3schools.com/tags/tag_link.asp
+https://www.w3schools.com/tags/tag_div.asp
+https://www.w3schools.com/tags/tag_button.asp
+
+
+
+NOT SUPPERTED in HTML5
+- acronym
+- applet - co to jest aplet - w sumie średnio rozumiem - jakiś konkratny selector który ma konkretne stylowanie? - tak przynajmniej zrozumiałem?
+- basefont
+- big
+- center
+- dir
+- font
+- frame
+- frameset
+- noframes
+- strike
+- tt
+
+
+O co chodzi z chromium, bo wydaje mi się, że używamy jej przy testach, a jest tylko inną przeglądarką google chroma z open soursem.
+Jaki jest sens używania article - służy tlko i wyłącznie o wyróżnienia testu, który sam w sobie pełni wartość? - jaką to ma wartość dla mnie? - sry, nie rozumiem - to zemu się pojawia wtedy kiedy się pojawia???
+
+https://www.w3schools.com/cssref/css_default_values.asp
+znalazłem podstawowe ustawienia każdego ze znaczników w html5
+
+Czy dodatkowe atrybuty są dla wszystkich znaczników takie same ??? 

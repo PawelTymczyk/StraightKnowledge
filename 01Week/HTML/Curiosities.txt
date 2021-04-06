@@ -93,7 +93,7 @@ Czy dodatkowe atrybuty są dla wszystkich znaczników takie same ???
 
 
 https://www.w3schools.com/tags/default.asp
-WAŻNE:
-https://www.w3schools.com/tags/tag_map.asp
-https://www.w3schools.com/tags/tag_track.asp
-https://www.w3schools.com/tags/tag_pre.asp
+
+
+http://www.hackwars.pl/roznice-miedzy-html5-a-html4/
+Czy warto się tych zmian nauczć się w miarę na pamięć?

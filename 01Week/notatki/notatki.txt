@@ -1,0 +1,100 @@
+Order of selectors:
+1. element selector p div
+2. id: #param1, #all
+3. class: .param, .all
+
+
+PROTIPY:
+
+* - universal selector 
+
+h1, h2, p { ... } - wszystkie 3 będą miały taki sam zapis  po przecinku łączymy selektory
+
+margin are outside of the box      -      padding are inside of the box
+
+Box model:
+    1 Margin are around of the box
+    2 Border define area of the box
+    3 Padding defime space between content and border
+    4 content ....
+
+Attr Selectors:
+a[target="_blank"] -            jeżeli element a będzie miał w sobie target="_blank" - wtedy wykona się kod
+[atrybut ~= "flower"] -         gdy pojawi się atrybut występujący gdzieś w class to wtedy się odpali 
+[attribute^="value"] -          
+[attribute$="value"] -          
+[attribute*="value"] -          
+
+DISPLAY:
+display: inline;        /* Default of all elements, unless UA stylesheet overrides */
+display: inline-block;  /* Characteristics of block, but sits on a line */
+display: block;         /* UA stylesheet makes things like <div> and <section> block */
+display: run-in;        /* Not particularly well supported or common */
+
+
+
+QUESTIONS:
+1. Raczej nie jest potrzebne, zębym znała wszsytkie właściwości bordera itd?... to które są istotne
+itd?... - border, margins, paddings, text decotarions justification ect.,
+
+2. What are difference between outline and border? both draw lines around of the content
+Outline are outside of the margin?
+
+3. Czy potrzeba znać wszystkie wbudowane font-family?
+
+4. Czy nauczyć się wszsytkich pseudo klas?  https://www.w3schools.com/css/css_pseudo_classes.asp     https://www.w3schools.com/css/css_pseudo_elements.asp
+
+5. Jakieś fajne ciekawostki jakie powinienem jeszcze znać?
+
+6. Jak robić pętle i funkcje warunkowe w css'ach?
+
+7. Jak często się używa ręcznie robionych tooltipów? - warto się w to dobrze wprawić
+
+
+
+
+
+SHORTHANDS:
+background: color image repeat position;
+border: size type color;
+
+DA FUCK ???? - pseudoklasy
+:nth-child(even) - nieparzyste? 
+
+
+To Do:
+wypisz różnice dla wszsytkich positions:   static, relative, fixed, absolute, sticky
+
+
+
+
+MODYFIKATORY SELEKTORÓW:
+Child Selector (>) - 
+Adjacent Sibling Selector (+) - 
+General Sibling Selector (~) - 
+https://www.w3schools.com/css/css_combinators.asp
+
+
+
+
+Jeszcze do ogarnęcia i pobawienia się:
+https://www.w3schools.com/css/css_inline-block.asp
+https://www.w3schools.com/css/css_pseudo_classes.asp
+https://www.w3schools.com/css/css_counters.asp
+https://www.w3schools.com/css/css_important.asp
+https://www.w3schools.com/css/css3_transitions.asp
+https://www.w3schools.com/css/css3_animations.asp
+https://www.w3schools.com/css/css_tooltip.asp
+https://www.w3schools.com/css/css3_multiple_columns.asp
+
+https://www.w3schools.com/css/css3_flexbox.asp
+
+https://www.w3schools.com/css/css_grid.asp
+
+
+
+Uzupełnij test: https://www.w3schools.com/css/exercise.asp
+
+Zrób stronki z gridem i flexem, żeby przećwiczyć wiedzę z 
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://css-tricks.com/snippets/css/complete-guide-grid/

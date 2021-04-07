@@ -1,2 +1,17 @@
 # StraightKnowledge
-- 01 Week is with html and css (flex;grid)
+- 01Week-html   - html 
+- 01Week-css    - css: flex, grid
+
+
+
+- 02Week-       - 
+- 03Week-       - 
+- 04Week-       - 
+- 05Week-       - 
+- 06Week-       - 
+- 07Week-       - 
+- 08Week-       - 
+- 09Week-       - 
+- 10Week-       - 
+- 11Week-       - 
+- 12Week-       - 

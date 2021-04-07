@@ -79,9 +79,6 @@ inherit - dziedziczenie przy font-style sie pojawiło
 Pozycjonowanie stron w przeglądarce zależy między innymi od title? - w jaki sposób to pomaga - były protipy, żeby np nie były to tylko hasła i żeby były jak najbadziej dokładne do treści najlepsze tytuły mają około 50-60 znaków
 
 
-https://www.w3schools.com/tags/tag_area.asp
-za co może odpowiadać coords, wydaje mi się, że za pixele ale nie mam pewności na podstawie niektórych testów ...
-
 O co chodzi z chromium, bo wydaje mi się, że używamy jej przy testach, a jest tylko inną przeglądarką google chroma z open soursem.
 Jaki jest sens używania article - służy tlko i wyłącznie o wyróżnienia testu, który sam w sobie pełni wartość? - jaką to ma wartość dla mnie? - sry, nie rozumiem - to zemu się pojawia wtedy kiedy się pojawia???
 

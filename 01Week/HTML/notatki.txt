@@ -1,0 +1,95 @@
+html5 wspiera już źródło audio i video
+dopuszcza skrypty js w tle
+używa baz sql zamiast cookie
+dopuszcza efekty drag and drop
+dużo bardziej przystosowany pod mobilkę
+prosta geolokacja za pomocą użycia js
+
+
+Zmienione html4 vs html5:
+<applet>			        Changed to <object>
+<acronym>			        Changed to <abbr>
+<dir>				        Changed to <ul>
+<frameset>		Removed     No new tag.
+<frame>			Removed     No new tag.
+<noframes>		Removed     No new tag.
+<strike>		Removed	    No new tag. CSS is used for this
+<big>			Removed	    No new tag. CSS is used for this
+<basefont>		Removed	    No new tag. CSS is used for this
+<font>			Removed	    No new tag. CSS is used for this
+<center>		Removed	    No new tag. CSS is used for this
+<tt>			Removed	    No new tag. CSS is used for thi
+
+
+
+SELECTORS:
+
+<a> - tag który jest użyty podstawowo jest czerwony ???
+z bezpośredniego linku można też pobierać dokumenty za pomocą "download"
+"media" służy jako mini odnośnik do przekierowania do wewnętrzej domeny
+"target" otwiera w preferowanym oknie dany link
+
+"abb" - skrót od "abbreviation"
+
+"base" - jest używany w headzie - domyślmy head
+
+"button" - czy warto zapamiętać tutaj wszystkie atrybuty jak np formtarget ???
+- nie tylko te najczęściej używane trzeba znać jak disabled, type czy value
+
+"br" - breaks the line
+
+"capition" exist only in table 0 defines table capition - titles columns
+tekst w elemencie "cite" - jest defaultowo wyświetlany kursywą i jest "na pewien sposó selektorem tekstu" - w jaki sposób dla mnie jest to użyteczne ??? 	
+"colgroup" - określa styl stylowaniu kolumn w tabeli - exist only in table
+
+"datalist" i "data" - podobne do dop downa
+
+"del" - selector który oznacza prekreślony tekst
+
+"dl" - description list ; "dt" - descriptionterms ; "dd" - descrition details   -   for what ???
+
+"embed" - po co to jest, bo w sumie to nie rozumiem
+-definiuje źródło zewnętrze pliku autio, obrazka lub video "podobne" działanie do sourse
+
+"fieldset" - grupuje znaczniki w formularzu co mi to daje ???
+
+"figcapition" - znacznik który definiuje podpis dla obrazka
+
+"form" - co mi daje -method- w formie - informuje tylko o sposobie przesyłu danych? 
+- tak, dzięki temu większa czytelność jest po prostu
+
+"form" - oninput - output - jak często coś takiego się używa?
+- warto wiedzieć, że jest, ale nie trzeba znać super dobrze, bo raczej rzadko się tego używa
+
+"hr" - pozioma linia po prostu
+
+"link" - do załączenia innych plików typu js css w headzie
+
+"main" - jaki jest sens używania tego selectora, bo nie za bardzo rozumiem, ani żadnego formatowania ani żadnych innych styli,
+a dodatkowych propery też nie ma ... ???
+- semantyczy HTML oraz pozycjonowanie stron
+
+"meta" - występuje tylko w head i określa meta ustawienia dokumentu html jak kodowanie np. ...
+
+"p" - co ciekawe nie można napisać paragrafu w paragrafie 
+- najlepiej używać tylko w komponentach najniższego poziomu ..., bo inaczej możę się chyba coś blokować
+
+"section" - nie rozumiem, dlaczego i kiedy jest lepiej użyć section od diva zwykłego
+- semantyczny HTML oraz pozycjonowanie stron
+
+
+inherit - dziedziczenie === przy font-style sie pojawiło
+
+
+https://www.w3schools.com/cssref/css_default_values.asp
+znalazłem podstawowe ustawienia każdego ze znaczników w html5
+
+Czy dodatkowe atrybuty są dla wszystkich znaczników takie same ??? 
+Generalnie tak, title dla tych dla których jest możliwy zawsze ma takie samo znaczenie.
+
+rozszerzenie maff, moz, na2, sbd, sht, xbl, xht, xpi, zul, sbstore, autoreg - są to tylko możliwe niektóre z możliwych fomatów
+NIE WAŻNE NA TERAZ
+
+
+
+https://www.w3schools.com/tags/default.asp

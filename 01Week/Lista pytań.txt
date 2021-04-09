@@ -1,67 +1,48 @@
 QUESTIONS:
 
-Nie wie czym jest semantyczny html - nie identyfikuje tagów === pojawiło się to przy moich brakach ??? o co z tym chodzi masz jakiś dobry artykuł bym mógł o tym poczytać?
+1. Nie wie czym jest semantyczny html - nie identyfikuje tagów === pojawiło się to przy moich brakach
+Sebastian ma jeszcze podesłać dobry link do poczytania sobie na ten temat. 
+przykład zamiast robić <div class="footer"></div> można po prostu użyć <footer></footer>
 
-Nie zna podstawowych problemów z display: inline-block - czy są jeszcze gdzieś takie problemowe cssy ? - teraz już wiem, bo było na sprawdzaniu wiedzy, ale na w3schools ani na css-tricks nie znalazłem nic o tym ...
+2. Nie zna podstawowych problemów z display: inline-block - czy są jeszcze gdzieś takie problemowe cssy ?
+Teraz już wie, takie mankamenty czasami się zdarzają np sztuczka z position absolute na środku ekranku wyświetli się 
+względem lewego górnego roku elemntu i trzeba zastosować jeszcze transform, żeby w pełni się wyśrodkował wybrany content.
 
-Jaka jest kolejność animacji elemntów podczas generowania strony html?
+3. Jaka jest kolejność animacji elemntów podczas generowania strony html?
+Poczytaj jeszcze o tym
 
-
-Mogę się sam off-topowo zająć tematem WEBu?
-Na pewno mam do poczytania na temat: PWA, JSONP, XSS, sanitizing, MITM attack, phishing, service worker oraz web worker. Te tematy sostały wytknięte w planie naprawczym czy są jeszcze jakieś ataki, które
+4. Mogę się sam off-topowo zająć tematem WEBu?
+Na pewno mam do poczytania na temat: PWA, JSONP, XSS, sanitizing, sanitizing, MITM attack, phishing, service worker oraz web worker. Te tematy sostały wytknięte w planie naprawczym czy są jeszcze jakieś ataki, które
 powinienem znać, albo jakieś inne techniki jak JSONP?
+Tak, po prostu poczytać sobie na temat kilku ataków internetowych itd ... wiedzieć też, że kiedy się poprawnie używa angulara to przed większością z nich chorni automatycznie niemalże.
+
 
 
 HTML:
 
 1. Czy warto się tych zmian nauczć się w miarę na pamięć? http://www.hackwars.pl/roznice-miedzy-html5-a-html4/
-
-
+- Nie trzeba znać na pamięć wystarczy kojarzyć, głównie chodzi o to, że część selectorów została usunięta i dodane nowe jak np.: article, figure, nav, section, a usuniete np.: center, big, basefont
 
 2. O co chodzi z chromium, bo wydaje mi się, że używamy jej przy testach, a jest tylko inną przeglądarką google chroma z open soursem.
-Jaki jest sens używania article - służy tlko i wyłącznie o wyróżnienia testu, który sam w sobie pełni wartość? - jaką to ma wartość dla mnie? - sry, nie rozumiem - to zemu się pojawia wtedy kiedy się pojawia???
+Chromium to po prostu silnik przeglądarki, w testach używa się go z wyłączonym modułem graficznym, aby przyśpieszyć wykonywanie przez karmę testów. Chomium jest silnikiem przeglądarkowym również dla: Edge.
 
-
-
-3. Pozycjonowanie stron w przeglądarce zależy między innymi od title? - w jaki sposób to pomaga - były protipy, żeby np nie były to tylko hasła i żeby były jak najbadziej dokładne do treści najlepsze tytuły mają około 50-60 znaków
-
-
+3. Pozycjonowanie stron w przeglądarce zależy między innymi od title? - w jaki sposób to pomaga.
+Im lepiej system pozycjonowania stron zrozumie treść strony tym lepiej ją pozycionuje. Dlatego zaleca się między innymi używania semantycznego HTMLa ponieważ pomaga zrozumieć silnikowi treść strony, tak samo tytuł.
 
 4. HTM - język rozszerzeznia jest często obsługiwan w starszych systemach ... Może przechowywać referencje do przeróżnych plików 	
-Wystarczy tylko kojarzyć?
-
-
+Wystarczy tylko kojarzyć
 
 
 
 CSS:
+1. Czy potrzeba znać wszystkie wbudowane font-family?
+Nie wystarczy kojarzyć, że są takie.
 
-1. Raczej nie jest potrzebne, zębym znała wszsytkie właściwości bordera itd?... to które są istotne
-itd?... - border, margins, paddings, text decotarions justification ect.,
+2. Czy nauczyć się wszsytkich pseudo klas?  https://www.w3schools.com/css/css_pseudo_classes.asp     https://www.w3schools.com/css/css_pseudo_elements.asp
+Nie trzeba, wystarczy kojarzyć i wiedzieć gdzie to łatwo sprawdzić
 
+3. Jakieś fajne ciekawostki jakie powinienem jeszcze znać?
+W większości obejmuje mnie podstawowa wiedza. Jak będę chciał rozszerzyć swoją wiedzę, to mogę się nauczyć Sassa na wyższym poziomie oraz pozycionowania stron na przeglądarce - to na przyszłość
 
-
-2. What are difference between outline and border? both draw lines around of the content
-Outline are outside of the margin?
-
-
-
-3. Czy potrzeba znać wszystkie wbudowane font-family?
-
-
-
-4. Czy nauczyć się wszsytkich pseudo klas?  https://www.w3schools.com/css/css_pseudo_classes.asp     https://www.w3schools.com/css/css_pseudo_elements.asp
-
-
-
-5. Jakieś fajne ciekawostki jakie powinienem jeszcze znać?
-
-
-
-6. Jak robić pętle i funkcje warunkowe w css'ach?
-
-
-
-7. Jak często się używa ręcznie robionych tooltipów? - warto się w to dobrze wprawić
-
-
+4. Jak często się używa ręcznie robionych tooltipów?
+Wiedzieć, że się da, ale nie muszę tego umieć z głowy - często wystarczy sam title czy coś w tym stylu na znaczniku.

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Week 02</title>
+    <style>
+      /* First solution */
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-size: 24px;
+
+        display: grid;
+        grid-template-columns: 248px auto auto 248px;
+        grid-template-rows: 124px 250px 250px;
+
+        grid-template-areas:
+          "head head head head"
+          "navigation main main aside"
+          "navigation news1 news2 aside";
+      }
+
+      .baner {
+        color: white;
+        text-align: center;
+        background-color: brown;
+
+        grid-area: head;
+      }
+
+      .navigation {
+        color: white;
+        text-align: center;
+        background-color: blue;
+
+        grid-area: navigation;
+      }
+
+      .main-article {
+        color: white;
+        text-align: center;
+        background-color: green;
+
+        grid-area: main;
+      }
+
+      .news1 {
+        color: white;
+        text-align: center;
+        background-color: greenyellow;
+
+        grid-area: news1;
+      }
+
+      .news2 {
+        color: white;
+        text-align: center;
+        background-color: pink;
+
+        grid-area: news2;
+      }
+
+      .aside {
+        color: white;
+        text-align: center;
+        background-color: purple;
+
+        grid-area: aside;
+      }
+
+      @media (max-width: 1024px) {
+        body {
+          grid-template-columns: 248px auto auto;
+          grid-template-rows: 124px 250px 250px 64px;
+
+          grid-template-areas:
+            "head head head"
+            "navigation main main "
+            "navigation news1 news2"
+            "aside aside aside";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="baner">Header</header>
+    <nav class="navigation">Nav</nav>
+    <article class="main-article">Main article</article>
+    <article class="news1">news one</article>
+    <article class="news2">news two</article>
+    <aside class="aside">Aside</aside>
+  </body>
+</html>

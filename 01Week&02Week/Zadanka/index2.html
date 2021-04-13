@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Week 02</title>
+    <style>
+      /* First solution */
+      .center {
+        height: 200px;
+        position: relative;
+      }
+
+      .center p {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Second solution */
+      .centering {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      Wyśrodowanie elementu względem parenta z wykorzystaniem dwóch technik:
+    </h2>
+
+    <h3>Sposób pierwszy</h3>
+    <article>
+      <div class="center">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+    </article>
+
+    <h3>Sposób drugi</h3>
+    <article>
+      <div class="centering">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+    </article>
+  </body>
+</html>

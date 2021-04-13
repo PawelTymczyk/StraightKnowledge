@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Week 02</title>
+    <style>
+      /* First solution */
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-size: 24px;
+
+        /* display: flex; */
+      }
+
+      .baner {
+        color: white;
+        text-align: center;
+        background-color: brown;
+
+        width: 100%;
+        height: 128px;
+      }
+
+      .navigation {
+        color: white;
+        text-align: center;
+        background-color: blue;
+
+        float: left;
+        height: 500px;
+        width: 248px;
+      }
+
+      .main-article {
+        color: white;
+        text-align: center;
+        background-color: green;
+
+        height: 250px;
+        width: 1150px;
+      }
+
+      .news {
+        display: flex;
+      }
+
+      .news1 {
+        color: white;
+        text-align: center;
+        background-color: greenyellow;
+
+        width: 450px;
+        height: 250px;
+      }
+
+      .news2 {
+        color: white;
+        text-align: center;
+        background-color: pink;
+
+        width: 450px;
+        height: 250px;
+      }
+
+      .aside {
+        color: white;
+        text-align: center;
+        background-color: purple;
+
+        float: right;
+        height: 500px;
+        width: 248px;
+      }
+
+      /* @media (max-width: 1024px) {
+        body {
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <header class="baner">Header</header>
+    <div class="content-container">
+      <div class="content-container-item">
+        <nav class="navigation">Nav</nav>
+        <main>
+          <article class="main-article">Main article</article>
+          <div class="news">
+            <article class="news1">news one</article>
+            <article class="news2">news two</article>
+          </div>
+        </main>
+      </div>
+      <aside class="content-container-item aside">Aside</aside>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Week 01</title>
+    <style>
+      
+      /* Startowy css */
+
+      .c1{
+        background-color: red;
+      }
+      .c2{
+        background-color: blue;
+      }
+      .c3{
+        background-color: yellow;
+      }
+      .c4{
+        background-color: green;
+      }
+      .c5{
+        background-color: purple;
+      }
+      .c6{
+        background-color: orange;
+      }
+      
+      .box-size{
+        height: 50px; 
+        width: 50px;
+      }
+
+      /* Rozwiązanie 1 - Zwykły css*/
+      
+      .c-box{
+        display: inline-block;
+        margin-right: -4px;
+      }
+
+      /* Rozwiązanie 2 - Grid */
+
+      .grid-box {
+        display: grid;
+        grid-template-columns: 50px 50px 50px;
+        grid-template-rows: 50px 50px;
+
+        grid-template-areas: 
+        "c1 c2 c3"
+        "c4 c5 c6";
+
+      }
+
+      .g1{
+        grid-area: c1;
+      }
+      .g2{
+        grid-area: c2;
+      }
+      .g3{
+        grid-area: c3;
+      }
+      .g4{
+        grid-area: c4;
+      }
+      .g5{
+        grid-area: c5;
+      }
+      .g6{
+        grid-area: c6;
+      }
+
+      /* Rozwiązanie 3 - Flex */
+
+      .flex-area{
+        display: flex;
+        flex-wrap: wrap;
+        width: 160px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p> 3:2 kwadraciaki</p>
+
+    <h3> Za pomocą zwykłego css'a </h3>
+    <article>
+      <p>
+        <div class="r1">
+          <div class="c1 c-box box-size"> 1 </div>
+          <div class="c2 c-box box-size"> 2 </div>
+          <div class="c3 c-box box-size"> 3 </div>
+        </div>
+        <div class="r2">
+          <div class="c4 c-box box-size"> 4 </div>
+          <div class="c5 c-box box-size"> 5 </div>
+          <div class="c6 c-box box-size"> 6 </div>
+        </div>
+      </p>
+    </article>
+
+    <hr>
+
+    <h3> Za pomocą grida </h3>
+    <article class="grid-box">
+      <div class="g1 c1 grid-cell box-size"> 1 </div>
+      <div class="g2 c2 grid-cell box-size"> 2 </div>
+      <div class="g3 c3 grid-cell box-size"> 3 </div>
+      <div class="g4 c4 grid-cell box-size"> 4 </div>
+      <div class="g5 c5 grid-cell box-size"> 5 </div>
+      <div class="g6 c6 grid-cell box-size"> 6 </div>
+    </article>
+
+    <hr>
+
+    <h3> Za pomocą flexa </h3>
+    <article class="flex-area">
+      <div class="c1 box-size"> 1 </div>
+      <div class="c2 box-size"> 2 </div>
+      <div class="c3 box-size"> 3 </div>
+      <div class="c4 box-size"> 4 </div>
+      <div class="c5 box-size"> 5 </div>
+      <div class="c6 box-size"> 6 </div>
+    </article>
+
+  </body>
+</html>

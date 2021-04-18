@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Week 02</title>
+    <style>
+
+    body{
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      position: fixed;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+
+    }
+
+    .top-left {
+      background-color: red;
+      animation-name: tl;
+      top: 0px;
+      left: 0px;
+    }
+
+    .top-right {
+      background-color: yellow;
+      animation-name: tr;
+      top: 0px;
+      right: 0px;
+    }
+
+    .bottom-left {
+      background-color: blue;
+      animation-name: bl;
+      bottom: 0px;
+      left: 0px;
+    }
+
+    .bottom-right {
+      background-color: green;
+      animation-name: br;
+      bottom: 0px;
+      right: 0px;
+    }
+
+    @keyframes tl {
+      0%   {background-color:red; left:0px; top:0px;}
+      25%  {background-color:yellow; left:200px; top:0px;}
+      50%  {background-color:blue; left:200px; top:200px;}
+      75%  {background-color:green; left:0px; top:200px;}
+      100% {background-color:red; left:0px; top:0px;}
+    }
+
+    @keyframes tr {
+      0%   {background-color:yellow; right:0px; top:0px;}
+      25%  {background-color:blue; right:200px; top:0px;}
+      50%  {background-color:green; right:200px; top:200px;}
+      75%  {background-color:red; right:0px; top:200px;}
+      100% {background-color:yellow; right:0px; top:0px;}
+    }
+
+    @keyframes bl {
+      0%   {background-color:blue; left:0px; bottom:0px;}
+      25%  {background-color:green; left:200px; bottom:0px;}
+      50%  {background-color:red; left:200px; bottom:200px;}
+      75%  {background-color:yellow; left:0px; bottom:200px;}
+      100% {background-color:blue; left:0px; bottom:0px;}
+    }
+
+    @keyframes br {
+      0%   {background-color:green; right:0px; bottom:0px;}
+      25%  {background-color:red; right:200px; bottom:0px;}
+      50%  {background-color:yellow; right:200px; bottom:200px;}
+      75%  {background-color:blue; right:0px; bottom:200px;}
+      100% {background-color:green; right:0px; bottom:0px;}
+    }
+
+    </style>
+  </head>
+  <body>
+    
+    <!-- Mała śmieszna animacja dla zabawy -->
+
+    <div class="top-left"></div>
+    <div class="top-right"></div>
+    <div class="bottom-left"></div>
+    <div class="bottom-right"></div>
+    
+  </body>
+</html>

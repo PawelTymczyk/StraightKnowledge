@@ -1,0 +1,54 @@
+1. Wyśrodowanie elementu względem parenta z wykorzystaniem conajmniej dwóch technik
+2. Wyśrodowanie elementu (Tekst cojamniej 50znaków) na stronie względem całego okna przeglądarki.
+
+3. Poczytaj sobie jeszcze o BEMie
+https://www.nafrontendzie.pl/metodyki-css-2-bem
+
+BEM jest jedną z metodyk nazywania obiektowo zorientowanego css'a:
+
+Opiera się następującym podziale elementów na stronie:
+blok - formularz, menu                                                  .block
+element - input, button, a                                              __element
+modyfikator - specyficzny wariant elemntu - labelka dla guzika          --modifier
+Można również używać bezpośrednio .block--modifier {}
+
+
+4. Przećwicz sobie każdy z position'ów ... 
+5. Poczytaj i poćwicz robienie animacji i co najbardziej opłaca się animować w przeglądarce - kolejność animowania "obiektów" ??? nie pamiętam jej
+
+6. Poczytaj na temat: JSONP, XSS, sanitizing, MITM attack, phishing, service worker, web worker
+
+PWA: Progressive web applicatin - https://blog.bitsrc.io/is-it-the-beginning-of-the-end-for-pwas-da0fb032d545
+Najnowsza wersja przeglądarki Firefoxm 85 powoli zaczyna porzucać PWA
+
+JSONP (JSON with padding) - https://www.w3schools.com/js/js_json_jsonp.asp
+Historyczna technika odbierania danych elementów JS, który jest elementem przeznaczonym do ładowania zwykłego JS.
+
+XSS: https://sekurak.pl/czym-jest-xss/ - polega na wstrzyknięciu "obcego" kodu JS lub innego jezyka skryptowego do strony internetowej pododatnej na to. (innerHtml) 
+
+Sanitizing - jest podobny do XSS, ale polega na wstrzykiwaniu zapytań SQL
+
+MITM: Man in the middle - ten atak polega na podłuchu, odbieraniu informacji od nadawcy, a następnie przesyłaniu zmodyfikowanej informacji do odbiorcy.
+Polega na kontroli nad przepływem informacji.
+
+Phishing - polega na wyłudzenia poufnych informacji np.: danych logowania czy karty kreduytowej. Rodzaj ataku opartego na inżynieri społeczne.
+Najprościej mówiąc ten atak polega na podszywaniu się pod prawdziwe strony internetowe w celu wyłudzenia informacji.
+
+Service worker - Mechanizm Service Workers został wprowadzony w najnowszych wersjach przeglądarek internetowych, żeby rozwiązać problem, czyli jak powinna się zachowywać w
+przypadku utraty połączenia z Internetem.
+
+Web worker - jest to forma skryptu, który zostaje odpalony i w tym czasie wszystkie inne skrypty przestają działać/odpowiadać do czasu aż si wykona działanie web workera.
+
+7. Poczytaj jeszcze trochę o semantycznym html'u
+https://devolajf.pl/html-css/jak-uzywac-html-semantycznie/  https://bedekodzic.pl/semantic-html/
+
+8. Zrób sobie jakiś landing page.
+
+9. Przetestuj to sobie na innerHtml i przez pipe'a:
+<div onclick=“console.log(“działa”)”></div>
+pipe zabezpieczył mnie przed działaniem
+
+10. dokończ sobie zadanko z HTML>indeks ... 
+
+Jeszcze jedno pytanko"
+5   Pytanie jaka jest kolejność animacji obiektów, pamietam, że są 4 etapy, ale nie pamietam ich kolejności -

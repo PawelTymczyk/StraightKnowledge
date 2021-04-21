@@ -1,0 +1,79 @@
+Order of selectors:
+1. element selector p div
+2. id: #param1, #all
+3. class: .param, .all
+
+
+PROTIPY:
+
+* - universal selector 
+
+h1, h2, p { ... } - wszystkie 3 będą miały taki sam zapis  po przecinku łączymy selektory
+
+margin are outside of the box      -      padding are inside of the box
+
+Box model:
+    1 Margin are around of the box
+    2 Border define area of the box
+    3 Padding defime space between content and border
+    4 content ....
+
+Attr Selectors:
+a[target="_blank"] -            jeżeli element a będzie miał w sobie target="_blank" - wtedy wykona się kod
+[atrybut ~= "flower"] -         gdy pojawi się atrybut występujący gdzieś w class to wtedy się odpali 
+[atrybut^="value"] -          jeżeli zaczyna się na value
+[atrybut$="value"] -          jeżeli kończy się na value
+[atrybut*="value"] -          jeżeli zawiera element value
+
+DISPLAY:
+display: inline;        /* Default of all elements, unless UA stylesheet overrides */
+display: inline-block;  /* Characteristics of block, but sits on a line */
+display: block;         /* UA stylesheet makes things like <div> and <section> block */
+display: run-in;        /* Not particularly well supported or common */
+
+
+
+SHORTHANDS:
+background: color image repeat position;
+border: size type color;
+
+
+Pseudoklasy:
+:nth-child(even) - nieparzyste
+
+
+Positions:
+static: pozycionuje się wedługj normalnego flow na stronie - zawsze jest defaultowo
+relative: pozycja relatywna w stosunku do normalnej pozycji 
+fixed: na stałe przyklejona na ekranie - bez znaczenia czy się scroluje czy nie
+absolute: pozycjonuje się bezpośrednio według rodzica, jeżeli względnego rodzica nie ma to wzgledem całej stron się pozycionuje
+sticky: w zależności od położenia scrolla na ekranie przełącza się pomiędzy relative, a absolute
+
+
+transition - czas trwania animacji
+
+
+przykładowa animacja
+@keyframes example {
+  0%   {background-color: red; left:0px; top:0px;}
+  25%  {background-color: blue; left:0px; top:200px;}
+  50%  {background-color: green; left:200px; top:200px;}
+  75%  {background-color: yellow; left:200px; top:0px;}
+  100% {background-color: red; left:0px; top:0px;}
+}
+
+MODYFIKATORY SELEKTORÓW:
+Child Selector (>) - dziecko
+Adjacent Sibling Selector (+) - sąsiadujący 
+General Sibling Selector (~) - generalny
+https://www.w3schools.com/css/css_combinators.asp
+
+
+Animacje:
+https://www.w3schools.com/css/css3_transitions.asp
+https://www.w3schools.com/css/css3_animations.asp
+
+
+Gridem i flexem: 
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://css-tricks.com/snippets/css/complete-guide-grid/

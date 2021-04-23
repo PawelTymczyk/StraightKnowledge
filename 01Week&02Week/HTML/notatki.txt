@@ -18,7 +18,7 @@ Zmienione html4 vs html5:
 <basefont>		Removed	    No new tag. CSS is used for this
 <font>			Removed	    No new tag. CSS is used for this
 <center>		Removed	    No new tag. CSS is used for this
-<tt>			Removed	    No new tag. CSS is used for thi
+<tt>			Removed	    No new tag. CSS is used for this
 
 
 

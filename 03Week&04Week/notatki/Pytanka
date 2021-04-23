@@ -1,0 +1,79 @@
+Podstawy - 
+HOISTING
+trochę ciężko mi to wytłumaczyć na czym on polega?
+przenoszenie deklaracji funkcji oraz zmiennych na samą górę bloku funkcyjnego?
+
+
+Są rodzaje scopeów
+* scope funkcyjny
+* scope całkowity
+* scope blokowy
+
+
+Obiektowość - 
+Czy bindowanie funkcji jest tak na prawdę tworzeniem reużwalnej funkcji?
+tworzy nową funkcję z nadpisaniem thisa
+
+
+- Sama koncepcja spoko, uświadomiłem sobie, że sam kiedyś jak się bawiłem w dziedziczenie w C to też to robiłem trochę,
+ale czy ma to jakieś bezpośrednie przełożenie zastosowanie w JS?
+Michał prezentował to głównie z zamiarem, żeby lepiej były później rozumiane prototypy
+
+
+Jakiś dodatkowy materiał o PROTOTYPE, bo średnio to rozumiem ...?
+Prototype chodzi tylko o to, że to dosłownie jest prototyp danego obiektu?
+
+
+Czy super po prostu się odnosi do obiektu rodzica w dziedziczeniu?
+
+
+Czy jest coś ważnego z dziedziczenia, czy po prostu muszę wiedzieć, jak ono wygląda oraz co ono daje?
+Dziedziczenie jest tak na prawdę bardzo bliskie (o ile nie jest tym samym co) Prototype?
+
+
+! normalna funkcja ma scope zmienialny, a w arrow scope jest nie zmienialny
+
+
+Jakieś zadanka na przećwiczenie sobie tego wszystkiego :) 
+Jutro (27.04.2021) dostanę
+
+
+DOM - Document Object Model
+Kiedy strona internetowa jest ładowana to przeglądarka generuje DOMa.
+dzięki temu JavaScript zyskuję możliwosć dynamicznego zmienniania/nadpisywania HTMLa.
+
+document.getElementById("") - w cudzysłowiu jest id danego obiektu HTMLa i dalej np innerHTML = "Hello World!";
+Umożliwia to nadpisanie wartości w wyniku czego Hello World również się pojawi
+
+document. getElementById / getElementByTagName / getElementByClassName
+
+element. innerHTML= / attribute= / style.property= / setAttribute(atr,val) 
+
+
+
+Event Loop
+
+
+okej, czy da się jakoś zablokować event loopa - za pomocą pentli najprościej?
+
+
+
+METODY NA ARRAYU
+
+
+map - przechodzi jak po obiektach i implementuje funkcję na każdym napotkanym elemencie
+
+array.filter((word) => word.length > 5 ).map((word) => word.length *= -1);
+
+filtruj o długości 5, a następnie przemapuj tablicę do ujemnych wartości ... 
+
+
+
+array.protorype.pop(); - zrzuca ostatą wartość i zwraca ją jako wynik, a resztę zwraca jako nową tablicę
+
+array.protorype.slice(x,y) - wytnik z tablicy od indexu x o tablicę o długości y
+
+array.prototype.splice(x,y,value) 
+- podmienia stare value na nowe value na pozycji x i odcina resztę 
+- jeżeli y to 1 to wygląda po prostu na podmienienie wartości na po;zycji
+- value może być pojedynczą wartością NIE w tablicy

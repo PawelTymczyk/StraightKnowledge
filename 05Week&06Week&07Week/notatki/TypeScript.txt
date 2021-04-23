@@ -1,0 +1,48 @@
+union types - umożliwa to zmiennej posiadanie więcej niż jednego typu
+let zmienna: string|boolean; - w tym momencie może zawierać zawrówno "string", jak i true
+
+TS wprowadził również tym any który dosłownie nei ma żadnych ograniczeń i wszystko "łyknie"
+
+podpowiedzi generuje Atom - zmienna. (i tutaj się pojawiają podpowiedzi Atoma)
+
+
+Type script posiada 3 używalne typy proste:
+- boolean
+- number
+- string
+
+i 3 typy złożone:
+- Array
+- object
+- tuple
+
+
+rzutowanie zmiennych:
+let someValue: any = "this is a string";
+let strLength1: number = (<string>someValue).length;
+let strLength2: number = (someValue as string).length;
+
+
+W type script istnieje również typ wyliczeniowy - czyli enum
+
+
+TYPY GENERYCZNE:
+type Resolver<T> = () => T;
+function toResolver<T>(arg: T): Resolver<T> {
+  return () => arg;
+}
+
+const resolver = toResolver('Plain text'); 
+TO TO SAMO CO:
+const resolver = toResolver<string>('Plain text');
+
+Interfejsy również mogą być generyczne.
+
+
+Wbudowane typy generyczne: (tylko te 3 widziałem w ogóle wcześniej, albo sam ich używałem)
+Partial<Type> - oznacza, że jest typu Type, ale tylko część pól będzie używana
+Required<Type> - czyli wymagany po prostu
+Readonly<Type> - typ tylko od odczytu
+
+Czy mam je wszystkie poznać i zapamiętać czy wystarczy tylko je kojarzyć?
+https://www.typescriptlang.org/docs/handbook/utility-types.html

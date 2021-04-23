@@ -1,0 +1,527 @@
+[
+  {
+    "id": 1,
+    "title": "Title 1",
+    "areas": ["Hardware", "Software"],
+    "products": [
+      {
+        "name": "Nimbus 2000",
+        "id": 1
+      },
+      {
+        "name": "Nimbus 2001",
+        "id": 2
+      },
+      {
+        "name": "Nimbus 2002",
+        "id": 3
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": {
+      "id": 1,
+      "title": "Title 1",
+      "areas": ["Hardware", "Software"],
+      "products": [
+        {
+          "name": "Nimbus 2000",
+          "id": 1
+        },
+        {
+          "name": "Nimbus 2001",
+          "id": 2
+        },
+        {
+          "name": "Nimbus 2002",
+          "id": 3
+        }
+      ],
+      "materials": [{ "id": 1, "name": "gap" }],
+      "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+      "draft": null,
+      "status": "Draft",
+      "author": {
+        "id": "sarah.notdoe@roche.com",
+        "preferredFirstName": "Sarah",
+        "preferredLastName": "Notdoe",
+        "roles": ["GlobalAuthor"],
+        "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+      }
+    },
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["GlobalAuthor"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Title 2",
+    "areas": ["Hardware", "Software", "Application"],
+    "products": [
+      {
+        "name": "Cobas 2000",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": {
+      "id": 2,
+      "title": "Title 2",
+      "areas": ["Hardware", "Software"],
+      "products": [
+        {
+          "name": "Nimbus 2000",
+          "id": 1
+        },
+        {
+          "name": "Nimbus 2001",
+          "id": 2
+        }
+      ],
+      "materials": [{ "id": 1, "name": "gap" }],
+      "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+      "draft": null,
+      "status": "Draft",
+      "author": {
+        "id": "sarah.notdoe@roche.com",
+        "preferredFirstName": "Sarah",
+        "preferredLastName": "Notdoe",
+        "roles": ["Team leader"],
+        "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+      }
+    },
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Title 3",
+    "areas": ["Hardware", "Software"],
+    "products": [
+      {
+        "name": "Cobas 1",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Title 4",
+    "areas": ["Application", "Software"],
+    "products": [
+      {
+        "name": "Cobas 12",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Title 5",
+    "areas": ["Application", "Software"],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Title 6",
+    "areas": ["Software"],
+    "products": [
+      {
+        "name": "Cobas 412",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Title 7",
+    "areas": ["Hardware"],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Title 8",
+    "areas": ["Application", "Hardware", "Software"],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 9,
+    "title": "Title 9",
+    "areas": [],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 10,
+    "title": "Title 10",
+    "areas": ["Application", "Software"],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 11,
+    "title": "Title 11",
+    "areas": ["Hardware"],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 12,
+    "title": "Title 12",
+    "areas": ["Software"],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 13,
+    "title": "Title 13",
+    "areas": [],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 14,
+    "title": "Title 14",
+    "areas": ["Hardware", "Software"],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 15,
+    "title": "Title 15",
+    "areas": ["Hardware", "Software"],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 16,
+    "title": "Title 16",
+    "areas": ["Application", "Software"],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 17,
+    "title": "Title 17",
+    "areas": ["Hardware", "Application"],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 18,
+    "title": "Title 18",
+    "areas": ["Application", "Hardware", "Software"],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 19,
+    "title": "Title 19",
+    "areas": ["Application", "Hardware", "Software"],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 20,
+    "title": "Title 20",
+    "areas": ["Application", "Hardware", "Software"],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "id": 21,
+    "title": "Title 21",
+    "areas": ["Hardware"],
+    "products": [
+      {
+        "name": "Cobas",
+        "id": 1
+      }
+    ],
+    "materials": [{ "id": 1, "name": "gap" }],
+    "lastUpdated": "2020-04-24T12:20:02.11+00:00",
+    "draft": null,
+    "status": "Published",
+    "author": {
+      "id": "sarah.notdoe@roche.com",
+      "preferredFirstName": "Sarah",
+      "preferredLastName": "Notdoe",
+      "roles": ["Team leader"],
+      "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
+    }
+  }
+]

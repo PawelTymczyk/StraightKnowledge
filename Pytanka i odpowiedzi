@@ -1,0 +1,904 @@
+Bazując na swojej wiedzy oraz planie naprawczym układam sobie pytania z obszarów z których nie czuję się pewnie by sobie je przećwiczyć.
+Albo po prostu wszystkie pytania tutaj zamieszczę.
+
+HTML & CSS
+
+1. Co to jest semantyczny HTML?
+
+Semantyczny HTML, czyli zgodny z jego semantyką - zamiast robić taga div z klasą footer, możemy po prostu użyć taga wbudowanego footer. 
+Czyli używanie tagów do tego do czego służą. Poprawne używanie tagów htmlowych ma przełożenie na pozycionowanie strony w przeglądarce.
+
+
+2. Co to są tagi w HTMLu?
+
+Tagi są to wszystkie divy, footery, spany i inne ..., head i body też są znacznikami
+
+
+3. Co nowego wprowadził HTML5?
+
+Część starych selectorów z html'a4 została usunięta i dodane nowe jak np.: article, figure, nav, section
+usunięte np.: center, big, basefont.
+
+
+4. Znajomość znaczników. Wymienić i omówić ...
+
+
+5. Wymień wszystkie rodzaje positions omów je, oraz podaj przykład użycia każdego z nich? (5)
+
+*static - jest to defaultowe ustawienie property position - nie jest w żaden sposób specyficzne 
+
+*relative - element jest pozycionowany/ustawiany w stosunku do pierwotnej pozycji. Ustawianie left, czy top spowoduje, że 
+zostanie on presunięty w stosunku do swojej normalnej pozycji.
+
+*fixed - ten element jest "przyklejony na stałe" jest ona ustawiana względem okna przeglądarki.
+
+*absolute - jest ustawiany względem swojego najbliższego relatywnego elementu. Jeżeli żaden taki nie istnieje to odnosi się 
+do okna przeglądarki. Nie jest dla niego generowane miejsce na stronie
+
+*sticky - przełącza się pomiędzy relative, a fixed.
+
+
+6. Od czego zależy pozycionowanie stron w przeglądarce?
+
+Im lepiej rozumie maszyna wyszukująca informacje w przeglądarce tym lepiej pozycionuje stronę. 
+Tak więc zależy to między innymi od poprawnego używania tagów htmlowych, czy ustawienia dobrego tytułu dla strony internetowej.
+
+
+7. Co to jest i jak działa flex?
+
+flex - jest to jedna z metod projektowania UI
+elementy pomiędzy sobą się dostosowują na podstawie ustawień
+
+
+parent: 
+- display: flex; - ustawienie flexa
+- flex-direction: row/column/row-reverse/column-reverse; - w jaką stronę ma się fleksować poziomo czy pionowo
+- flex-wrap: wrap/nowrap; - czy childy mają się zawijać do nowej linii czy nie
+- justify-content: flex-start/fles-end/center/space-between/space-around; są to rodzaje horyzontalnych odstępów pomiędzy childami flex'a
+- align-items: fles-start/fles-end/center/stretch/baseline; - są to rodzae odsępów wertykalnych między childami flex'a
+- align-content: flex-start/flex-end/center/stretch/space-between/space-around; - jak się mają pozycionować wszystkie childy wewnątrz rodzica flex'a
+
+child:
+- flex-items: (number); - kontroluje koleność w jakiej się pojawiają
+- flex-grow: (number); - definuje rozszerzanie się elementów; 
+
+
+
+8. Co to jest i jak działa grid?
+
+grid - jest to jedna z metod projektowania UI
+elementy mają od razu z góry przypisane miejsca
+
+parent:
+- display: grid; ustawienie grida
+- .container {
+    grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+    grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+  } - wartości względem których ustala się wielkości danychpól w gridzie
+
+- grid-template-areas: 
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+} - olreśla całą przestrzeń za pomocą nazwania ich
+- grid-gap: (number); - określa przestrzeń jaka ma się znaajdować pomiędzy każdym boxem w gridzie
+- justify-items: ...; - wypozcjonowanie wszsytkich horyzontalnie
+- align-items: ...; - wypozcjonowanie wszsytkich wertykalnie
+
+child:
+- .item {
+    grid-column-start: <number> | <name> | auto;
+    grid-column-end: <number> | <name> | auto;
+    grid-row-start: <number> | <name> | auto;
+    grid-row-end: <number> | <name> | auto;
+  }  - określa pozycję na siatce (czyli gridzie)
+- grid-area: <name>; określa boxy w który ma się pojawić dany child
+- justify-self: start/end/center/stretch; - jak ma się horyzontalnie wypozycjonować w danych polu grida
+- align-self: start/end/center/stretch; - jak ma się wertykalnie wypozycjonować w danych polu grida
+
+
+9. Jakie właściwości powinniśmy animować, a jakie nie?
+
+Od końca według kolejności generowania elementów. Dzięki czemu nie musimy przejść całego cyklu, tylko otego, którego zanimowaliśmy.
+Czyli możemy np animować kolory czy wielkość czcionek, czy poruszanie się divów (czy innych boxów) po ekranie.
+
+
+10. Co to są selektory css? /kolejność/
+
+Selektory css są to odpowiedno nazwy tagów htmlowych, nazwy id, nazwy klas.
+
+tag: .input {}
+id: #repeatPassword {}
+class .repeatPassword {}
+
+
+11. Co to jest Box Model
+
+Box Model jest to sposób jeden ze sposobów projektowania kontentu na stronie - najpierw po zewnętrznej są padding, następnie jest
+granica kontentu np div'a - na tym może się znajdować border, następnie są marginesy wewnątrzn kontentu, a na sam koniec jest 
+konetnt - tekst, obrazek.
+
+
+12. Jakie są modyfikatory selektorów? ( > + ~ )
+
+> - Child Selector - dziecko
++ - Adjacent Sibling Selector - sąsiadujący 
+~ - General Sibling Selector - generalny
+
+
+13. Gdzie możemy umieścić stylowanie:
+W headzie za pomocą taga style.
+W oddzielnym pliku i wtedy umieszczamy scieżkę do niego ... <link rel="stylesheet" href="styles.css">
+Bezpośrednio w tagu, który chcemy ostylować - style inlinowe
+
+
+14. Jkie są salektory atrybutów i co odróżnia każdego z nich?
+
+Attr Selectors:
+a[target="_blank"] -           jeżeli element a będzie miał w sobie target="_blank" - wtedy wykona się kod
+a[atrybut ~= "flower"] -       gdy pojawi się atrybut występujący gdzieś w class to wtedy się odpali 
+a[atrybut^="value"] -          jeżeli zaczyna się na value
+a[atrybut$="value"] -          jeżeli kończy się na value
+a[atrybut*="value"] -          jeżeli zawiera element value
+
+
+
+
+Java Script
+
+1. Jak dzielimy typy?
+
+Tyby dzielimy na proste i złożone.
+
+
+2. Wymień wszystkie typy proste oraz jaki mają typ? (5)
+
+number      - typ: number
+string      - typ: string
+boolean     - typ: boolean
+null        - typ: object
+undefined   - brak
+
+
+3. Wymień wsyzstkie typy złożone oraz jaki mają typ? (4)
+
+array       - typ: object
+object      - typ: object
+function    - typ: function
+symbol      - typ: symbolyt
+
+
+4. Wymień 4 sposoby zapisu funkcji?
+
+const a1 = function Name() {}
+const a2 = function () {}
+const a3 = () => {}
+const a4 = () => return
+
+przy użyciu arrow function nie nadpisujemy thisa, kiedyś, żeby to zrobić uzywało się brzdkiem metody, że dodawało się property var data i za pomocą tej zmiennej się przekazywało 
+
+
+5. Co to są funkcje anonimowe oraz jak się je tworzy?
+
+Funkcje anonimowe są to po prostu funkcje bez konkretnej nazwy - array function tworzymy je tak jak jest zapisane
+a3 i a4 z podpunktu wyżej.
+
+
+6. jaka jest różnica między == vs ===? Jak się nazywają oba operatory?
+
+== - operator płytkiego porównania - porównuje tylko wartości
+=== - operator głębokiego porównania - najpierw porównuje typy porównywanych elementów, a następnie ich watości
+
+
+7. Do czego służy for ... in
+
+Służy do iteraowania się po obiekcie.
+
+
+8. Do czego służy for ... of
+
+Służy do iteraowania się po arrayu.
+
+
+9. Co to jest operator sperad oraz jak się go używa? Kiedy spread operator?
+
+Operator spread jest zapisywany w postaci ... i generalnie służy do zrzucenia zawartości tablicy do nowej tablicy, czyli
+możemy na podstawie niego wykonać płytką kopię. Przy jego pomocy można również połączyć kilka tablic w jedną.
+
+
+10. Co to jest operator rest oraz jak się tego używa?
+
+Operator rest zapisujemy dokładnie w ten sam sposób co operator rest - ... - 
+
+
+11. Do to jest destrukturyzajca? Podaj jakieś przykłady?
+
+let obj = { a:1 , b:2 , c:3 , d:[4] };
+
+Destrykturyzacja - jest to rozkładanie obiektu na poszczególne pola.
+let {a, d} = obj;
+to jest to samo co
+let a = obj.a;
+let d = obj.d;
+
+
+12. Co to jest Hoisting?
+
+Hoisting polega na przenoszeniu deklaracji zmiennej powyżej danego np danego blou np.:
+
+{
+    jakiś kod;
+
+    if( coś tam ) {
+        let b = 2;
+        dalej kod;
+    }
+
+
+    TWORZY SIĘ TEGO TO:
+
+
+    jakiś kod;
+    let b;
+    if( coś tam ) {
+        b = 2;
+        dalej kod;
+    }
+}
+
+
+13. Jakie mamy scope? (3)
+
+Posiadaymy 3 scopey:
+- scope ogólny (root scope)
+- scope blokowy
+- scope funkcyjny
+
+
+14. Co to jest garbage collector?
+
+Garbage collector - czyli zbieracz śmieci jest to wbudowany mechanizm, który czyści pamięć z już nie używanych elementów, zmiennych itd ...
+
+
+15. Co to jest instanceof? Jak się tego używa?
+
+zmienna instanceof jakiś typ - boolean/albo nawet jakiś własny
+Sprawdzanty jest typ danej zmiennej.
+
+
+16. Co to jest obiekt?
+
+Obiekt są to elementy, które posiadają za równo parametry - czyli pola, jak i metody czyli funkcje działajace na tych polach jak i 
+danych zewnętrznych.
+
+
+17. Co daje nam this?
+
+THIS - odwołuje się do samego siebie za równo w funkcji jak i w obiecie, na podstawie tego możemy uzyskać specyficne operacje,
+nie jeżeli funkcja jeszcze nie została przypisana do zmiennej (jako obiek oczywiście) 
+Czyli odwoływalnie się do samego siebie w obiekcie, czy innej konstrukcji
+
+
+18. Co to jest bindowanie?
+
+Jest to 2-stopniowe przypisanie funkcji do nowego obiektu - dopisze właściwości w "kopii", ale oryginał funkcji pozostawi niezmieniony.
+
+
+19. Call vs apply
+
+call - redefiniuje instancję obiektu na czas wywołania, każdy element funkcji wywołującej jest samodzielnym elementem
+* cylinder.volume.call({pi: 3.14159}, 2, 4);
+
+apply - redefiniuje instancję obiektu na czas wywołania, początkowe elementy są wartościami obiektu,
+natomiast elementy funkcji można podać w tablicy
+* cylinder.volume.apply({pi: 3.14159}, [2, 4]);
+
+Wniosek: call i apply są do siebie nawzajem stosunkowo podobne
+
+
+20. Co to jest prototype?
+
+Prototype - jest to prototyp obieku - zawiera wszystkie podstawowe dla niego właściwości
+
+21. Czym się różni __proto__ od prototype
+
+a.__proto__ === Object.getPrototypeOf(a)
+
+
+22. O co chodzi z super?
+
+Jest to odwołanie się do rodzica danego komponentu, czy innego elementu.
+
+
+23. Programowanie funkcyjne - co to, do czego się nadaje?
+
+Progranowanie funkcyjne ejst jednym ze sposóbów pisania kodu -> polega na pisaniu funkcji które wywołują inne funcje i
+pracują na funkcjach  - zaletą takiego programowania jest, zę przy konkretnym zestawie danych wynik jest zawsze ten sam
+Ma duże wykorzystywanie w automatycznym przetważaniu danych. Jest używany przez biblioteki typu Redux, czy RxJs.
+
+
+24. Co to są czyste i nie czyste funkcje?
+
+Funkcje czyste to takie, które w wyniku swojego działania nie powodują skutków ubocznych, wypluwają czysty wynik 
+- nie modyfikują danych przychodzących, ani nie pracują na żadnych innych funkcjach.
+
+Fukncje nie czyste to te które nie spełniają powyższych warunków. Czyli np.: funkcje, które używają console.log(), modyfikują DOMa,
+operacje na plikach, requesty sieciowe.
+
+
+25. Podaj przykłady operacji na array-u
+
+map - mapuje się po każdym elemencie z tablicy
+filter - filtruje
+reduce - można to uznać za połączenie mapa i filter
+flatmap - flatmap spłaszcza tablicę tablic o jeden poziom, argument liczbowy definiuje ilość spłaszczeń - jeżeli damy liczbę większą
+niż te spłaszczenia to zredukujemy tablicę tablic do pojedynczej tablicy
+splice - wycina elementy i podmienia
+slice - wycina od do i zwraca
+some - zwraca true, jeżeli którykolwiek element tablicy spełnia warunek 
+every- zwraca true, jeżeli wszystkie elementy spełniają warunek
+indexOf - wyszukuje index po płaskiej tablicy
+findIndex - wyszukuje indes po tablicy obiektów (nie płaskiej)
+
+26. Podaj przykłady operacji na obiekcie?
+
+isArray - sprawdza, czy element jest tablicą
+hasOwnProperty() - sprawdzenie czy posiada property o danej nazwie
+for ... in - przechodzenie po polach z obiektu
+
+27. Co to jest DOM?
+
+DOM - Document Obejct Model. Odpowiada za dwie rzeczy: opisuje/stanowi strukturę dla dokumentu HTML oraz określa w jaki sposób
+można się odnosić się do tej struktury za pomocą skryptu - dzięki temu JavaScript zyskuję możliwosć dynamicznego 
+zmienniania/nadpisywania kodu HTMLa.
+
+28. Co to jest "strict mode" i do czego służy?
+
+Aby uruchomić w tanym pliku strict mode musimy napisać - 'use strict';
+Jest to dodany w ECMAScript5 dodatkowy tryb interpretowania kodu, który jeszcze bardziej rygrystycznie podchodzi do jego oceny.
+Kod strict mode i zwwykłęgo mogą współ istnieć.
+
+
+29. Co to jest Event Loop?
+- jak amen w pacierzu
+
+call stack - stos wywołoń (funkcji najczęściej) - bufor typu LiFo - wszystie wywołańa pokolejni są 
+zbierane i od odstatniego dorzuconego zostają one wywołane.
+Maksymalna pojemność stosu to 16 000 wywołań. 
+W czasie jednej iteracji kończy się tylko jedno zadanie, a cały stos kończ swoje działanie, gdyzdejmiemy z nie wszystkie elementy.
+
+quene - kolejka - FiFo wywołania wiadomości są wywolywane w kolejności takiej jakiej się pojawiły na tej kolejce 
+
+Heap - sterta - przechowywane są tam dynamicznie tworzone struktury danych w czasie trwania samego programu.
+Za zwalnianie pamięci z nieużywanych elementów odpowiada garbage collector.
+
+setTimeout() - podana jest minimalna wartość w milisekundach, po której wykona się kod 
+- może wywołaś się później niż zakładane z powodu innych elementów w stosie lub kolejce
+
+mikrotaski - obszar który obsługuje kod asynchroniczny - z tego obszaru może podczas jednej pętli zejść więcej niż jeden element 
+znajdują się tam między innymi setTimeout(), Promise oraz ręcznie napisane funkcje asynchroniczne. 
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
+
+
+
+Type Script
+
+1. Jakie są cechy TS'a które nie posiada JS - np.: co na nas wymusza?
+
+TS wymusza na nas między innymi typowanie, wprowadził również nowy typ any, który mówi właśnie o tym, że obiekt może mieć dowolny typ.
+Dzięki temu nasze środowisko jest w stanie generować nam podpowiedzi oraz pokazuje nam błędy jeszcze przed kompilacją programu, oczywiście
+przy założeniu, że porawwnie wszystko typujemy.
+
+
+2. Wymień typy proste? (3)
+
+- number
+- string
+- boolean
+
+
+3. Wymień typy złożone? (3)
+
+- object
+- array
+- tuple - nie pamietam za bardzo do czego służy
+
+
+4. Co to jest enum?
+
+Enum jest typem wyliczeniowym, czyli za jego pomocą można stworzyć jakiś typ, który ma konkretne wartości - 
+numer (można to też nazwać id) - oraz jego wartość
+
+Prostym przykłądem enuma może był płeć:
+- mężczyzna
+- kobieta
+- oraz inna (hehe)
+
+5. Podaj przykład rzutowania?
+
+let strLength: number = (someValue as string).length;
+
+
+6. Co to są typy generyczne - generyki?
+
+Typy generyczne są to np.: funkcje z typem generycznym dzięki temu mamy pewną dowolność w nadawaniu typów, jednak mimo tego wciaz mamy 
+informację o obecnym typpie/typach elementów fukcji. DlaTego mówię funkcji, bo najłatwiej mi się na typ tłumacz.
+
+7. Jak tworzymy własne typ generyczny?
+
+Przykład typu genercznego:  MyType<T>(cell: T) { }
+
+8. Wymień i opisz kilka wbudowane typów generycznych? (3)
+
+partial<Type> - informuje nas o tym, że będzie urzywane tylko część pól z danego obiektu.
+readonly<Type> - informuje nas o tym, że będzie to element tylko do odczytu.
+required<Type> - informuje, że typ jest wymagany
+
+
+9. Jaka jest idea interfaceów w programowaniu?
+
+Interfejs służy jedynie jako opis bytu który może zaistnieć. Interfejsy mogą być implementowane i nadpisywane jego pola jak i metody.
+Jednak same w sobie nie mogą zawierać żadnych właściwości.
+Ja głównie używałem interfejsów, aby posiadać modele danych którymi będę się później w trakcie pisania funkcionalności posługiwał.
+
+
+
+Angular
+
+1. Co to jest komponent?
+
+komponent jest to jeden z podstawowych elemntów angularowych. Posiada on dekorator Component, a w nim między innymi zawiera się:
+template to widoku html'owego, opcionalnie cssy, albo inny plik z odnoszący się do stylowania. Zawierają się również inne 
+opcionalne elementy jak chenageDetection. 
+Posiada również selector - czyli naswa pod jaką będziemy wywoływać ten komopnent.
+KOmponenty służą do prezeentacji danych o ogólnie całej wizualnej interakcji użytkownika z aplikacją.
+
+2. Co to jest dyrektywa?
+
+Dyrektywa jest to element angulara pozwalający na zmianę lub rozszerzenie danego zachowania w aplikacji. Może być np dyrektywa
+zażądzająca przekierowaniami lików w zależoności od tego z jakiego wcześniejszego linku pochodzi polecenie o przekierowania. Nie
+posiada template tak jak komponent, a więc też nie posiada możliwości ostylowania go. 
+
+
+3. Co odróżnia komponent od dyrektywy?
+
+Zasadniczą różnicą pomiędzy komponentem, a dyrektywą jest to, że ten pierwszy posiada template, natomiast ten drugi już nie.
+
+
+4. Wymień wszystkie Lifecycle hooks, raz się wywołuje czy wiele razy i kiedy się wywołuje? (8)
+
+ngOnChanges - wywoływany za każdym razem kiedy zmienia się wartość pola oznaczonego dekoratorem @Input()
+ngOnInit - wywoływany tylko raz podczas tworzenia komponentu, wywoływany po konstuktorze
+ngDoCheck - reaguje na zmianę każdego innego pola niż @Input - lecz nie zaleca się, ponieważ aplikacja możne poważnie zacząć zwalniać
+ngAfterContentInit - po inicjalizacji <ng-content> - tylko raz
+ngAfterContentChecked - po każdej zmianie w <ng-content> - wiele razy
+ngAfterViewInit - po zainicjalizowaniu widoku komponentu - tylko raz
+ngAfterViewChecked - po każdej zmianie w widoku - wiele razy
+ngOnDestroy - przy "zniszczeniu" komponentu - tylko raz
+
+
+5. Objaśnij Mechanizm detekcji zmian?
+
+Z anguleskiego Change Detection - polega na wykrywaniu zmian w aplikacji oraz reagowaniu na te zmiany - czyli na to w jaki 
+sposób i czy przeładowywać komponent. 
+ChangeDetection posiada 2 tryby defaul oraz OnPush.
+- default jak sama nazwa mówi jest podstawowy (chodź istnieje zmiana tego bezpośrednio w ustawieniach projektu).
+Przy tym ustawiniu przeładowywana jest cała strona.
+
+- onPush służy do przeładowania konkretnego widoku, albo nawet elementu na widoku tej strony.
+
+OnPush jest w takim razie dużo bardziej wydajny niż zwykły tryb detekcji zmian chodźby z powodu, że nie muszą być renderowane
+wszystkie widoki na nowo, tylko te w których została wychonana jakaś interakcja.
+
+Im większy projekt tym bardziej widać różnicę przy działaniu OnPush, a default.
+
+
+6. Czym się różni defult od OnPush w ChangeDetection?
+
+Już odpowiedź zawiera się w odpowiedzi na pytanie wyżej.
+
+
+7. Wymień kilka (3) wbudowanych pipe'ów angularowych i wytłumacz co robią? 
+
+| uppercase
+| lowercase
+| date: ''
+
+
+8. Jak się tworzy własne pipe'y w angularze?
+
+Własny pipe przedewszsytkim możemy tworzyć za pomocą Agular CLI i odpowiedną do tego komendą - ng g pipe NAZWA_PIPA
+
+W pipe posiadamy przedewszsytkim dekorator @Pipe w którym mamy pole name czyli nazwa pipe'a pod jaką będzie znany w aplikacji i pod
+jaką będą się do niego odnosić inne komponenty. Jest jeszcze pole opcionalne - pure - oznajmia nam czy ten pipe jest pure (czysty),
+czy nie czysty
+
+
+9. Immutable oraz jakie daje korzyści korzystanie z tego podejścia?
+
+Immutable jest takim istawieniem angulara, że nie chce on pracować na obecnych zmiennych.
+
+Takie podejście ma parę korzyści ponieważ z racji tego możemy wciąż w prosty sposób pracować na danych za pomocą kopii obiektów
+czy innych elementów. Natomiast dzięki temu mamy zawsze możliwość do odwołania się "początkowego" (w kontekcie danej części kodu)
+stanu danych. Dzięki temu mamy większą kontrolę za równo nad danymi jak i stanem aplikacji. Unikamy również dzięki temu nie
+potrzebnych błędów oraz nieoczekiwanych zachowań.
+
+
+10. Co to jest CLI i wymień kilka(5) komend?
+
+Jest to interfejs, który ma za zadanie przyśpieszyć pracę nad kodem oraz np.: szyvbsze generowanie go.
+
+npm install -g @angular/cli
+ng help
+ng new my-first-project
+ng serve --o 
+ng build my-app -c production
+
+11. Przekazywanie danych pomiędzy komponentami - wymień wszystkie 3 metody i opisz je?
+
+Input -> służą do komunikacji drogą rodzić - dziecko. Dziecko odszymuje informacje od rodzica.
+
+Output -> służy do komunikacji drogą dziecko - rodzic. Rodzić odszymuje informajce które są emitowane od dziecka.
+
+Serwisy -> dzięki nim jest możliwe współdzielenie danych przez komponenty które nawet nie muszą o sobie wiedzieć. Poprzednie 2 metody mają
+zastosowanie wówczas, gdy
+
+12. Idea serwisów oraz do czego je wykorzystujemy?
+
+Serwisu służą do zarządzania zasobami danych - pobierania, wysyłania danych.
+Serwisy dają możliwość współdzielenia informacji po między częściami aplikacji, które nawet nie muszą o sobie nawzajem wiedzieć.
+Serwisy służą do tworzenia logiki, która ma być współdzielona pomiedzy różnymi częściami aplikacji.
+
+@Injectable() - dekorator, który odpowiada za oznakowanie pliku jako serwisu
+
+
+13. Elementy składowe modułu - wymień i krótko opisz? (jest ich 5)
+
+- declaration - tutaj znajdują się deklaracje wszystkich komponetów w ramach tego modułu.
+- import - tutaj wpisujemy komponenty, które będziemy wykorzystaywać w ramach tego modułu.
+- export - komponeny, które eksportujemy w ramach tego modułu, aby mogły być używane w innych modułach.
+- providers - 
+- bootstrap - 
+
+
+14. ForRoot & ForChild?
+
+forRoot() - jest to funkcja zwracająca instancję interfejsu. - Dzięki temu mamy wybór czy importować moduł wraz z serwisami czy bez nich.
+Umieszczenie w tym serwisu czy pipe'a umożliwia decydowanie czy ma być on widoczny poza tym modułem czy też nie.
+
+forChild() - można go określić leniwym doczytywaniem modułów
+Przykłady użycia:
+- kiedy serwis ma działać inaczej w tym konkretnym module niż w reszcie aplikacji
+- jeżeli chcemy jakiemuś serwisowi dostarczyć dane - wtedy metoda forChild zwraca pustą tablicę serwisów,
+jednak przyjmuje jakąś wartość, z którą coś później robi
+
+
+15. Opisz zasadę działa DI?
+
+
+DI - to w zasadzie mapa (provide: klucz, useValue: wartość)
+
+const inject = Injector.create([
+    {provide: klucz, useValue: wartość}
+]);
+
+inject.get("klucz");
+
+
+Rejestracja serwisu, który można wstrzykiwać:
+
+@Injectable({
+  providedIn: 'root',
+})
+export class MyService {
+    ...
+}
+
+wstrzykuje się zależność w konstruktorze komponentu np.:
+component(private myService: MyService){}
+
+
+16. Jak wstrzykujemy dane? (rejestracja i inicjacja w komponencie)
+
+Rejestracja serwisu, który można wstrzykiwać:
+
+@Injectable({
+  providedIn: 'root',
+})
+export class MyService {
+    ...
+}
+
+component(private myService: MyService){}
+
+
+17. Poziomy wstrzykiwań - drzewo wstrzyknięć?
+
+
+"Drzewo wstrzyknięć" - poniżej jest pokazana hieriarchia wstrzyknięć. Każdy z nich ma rodzica (prototyp), poza wsrzykiwaczem null'owym.
+
+           null
+            | 
+         platform
+            |
+           root
+ Dalej są normalne komponenty.
+
+
+18. Objaśnij co to Injection Token?
+
+Dzięki InjectionToken, możemy np. do komponentu dostarczyć obiekt konfiguracyjny, który zostanie zdefiniowany wyłącznie raz
+np. w AppModule, czyli polega na wstrzykiwaniu sparametryzowanych obiektów/instancji komponentów.
+Przykładem, gdzie jest już używany Injection Token jest np. moment, gdy w angular materialu używamy przekazywania danych ...
+
+constructor(  ====>  @Inject(MAT_DIALOG_DATA) public data: DialogData   <==== ) { }
+
+
+19. STUB? - //////////////// DOPISZ PEŁNĄŁ NAZWĘ JAKO PODPOWIEDŹ
+
+"" - Stuby są to gotowe odpowiedzi na działania wykonywane podczas testu. Zwykle nie odpowiadają na nic innego poza
+tym co jest zaprogramowane w teście.
+
+Czyli jest to funkcja która zastępuje implementację oryginalnej funkcji i zwraca tylko oczekiwany wynik z pominięciem pozostałych
+właściwości tej funkcji. Dzięki temu podczas tesu nie jest wykonywana niepotrzebna komunikacja dzięki czemu oszczędza się 
+za równo pamięć jak i czas. 
+
+
+20. AAA? ARRANGE-ACT-ASSERT
+
+Jest to metodyka podejścia do testów, która mówi. Najpierw przygoduj sobie specjalne dane do danego testu, albo testów.
+Następnie wywołaj działanie. A na samym końcu assert mówi o potwierdzeniu tego wyniku testu (czyli expect'a.)
+
+
+21. TDD? TEST-DRIVEN-DEVELOPMENT
+
+Jest to podejście programowania, które oznacza, że najpierw piszemy testy danej funkcionalności czyli na pewnien spośób opisujemy tą
+funkcionalność. Dopiero później piszemy kod funkcionalności. TDD pozwala nam przemyśleć już na wczesnym etapie sytuacje z jakimi się 
+spotkamy, oczywiście wszystkich i tak nie przewidzimy. Z racji, że najpierw pisane są testy to na samym początku wszystkie będą na
+"czerwono" - czyli oblane, a dopiero po napisaniu funkcionalności powinny wszystkie mieć status "zielony", czyli zaliczonych.
+
+
+22. Piramida testów?
+
+Piramida testów mówi o kosztowności i nie jako przez to hieriarchii i ilości pisanych testów w danej aplikacji.
+
+- testy jednostkowe - jest ich najwięcej, najmniej kosztowne
+- testy integracyjne - jest ich trochę mniej, kosztowniejsze są
+- testy e2e - end-to-end - jest ich najmniej są najbardziej kosztowne.
+
+
+23. Co to są testy jednostkowe i do czego służą?
+
+Testy jednostkowe są to testy w których testujemy każdą pojedynczą ścieżkę w funkcjonalności.
+są to najprostrze i najkrutsze testy jakie możemy wykonać za pomocą Angular CLI oraz paczek Jasmine i Karma, albo im podobnych.
+
+
+24. Co to są testy integracyjne i do czego służą?
+
+Testy integracyjne mają za zadanie przetestować całą funkcję i sprawdzają integrację pomiędzy wielona elementami danej
+funkcjonalności. Jest ich mniej niż testów jednostkowych ze względu, że są dużo bardziej wymagające.
+
+
+25. Co to są testy e2e i do czego służą?
+
+Testy e2e, czyli end-to-end mają za zadanie przetestowania całych ścieżek działania. A więc tak na prawdę można po prostu na ich
+podstawie testować całe user story. Ze względu na swoją wielkość i kosztowność w utrzymaniu nie pisze się ich często i dużo.
+
+
+26. Jakie mamy podziały komponentów? Opowiedz o tym trochę? - (logiczne / prezentacyjne)
+
+Mamy komponenty prezentacyjne - te mają za zadanie wyświetlać jakieś konkretne elementy DOM'a za pomocą html'a.
+
+Komponenty logiczne - odpowiadają za implementacje logiki oraz przekazywanie danych do komponentów prezentacyjnych.
+
+Komponenty logiczne są najczęściej rodzicami jednego, albo kilku elementów prezentacyjnych.
+
+Komponent prezentacyjny - reużywalny box, który ma w sobie pola imię i nazwisko. Wydzielone dlatego, bo ten template, będzie często używany.
+
+Komponent logiczny - każdy komponent, który przetwarza dane.
+
+
+27. Gdzie trzymamy logikę związaną z serwerem?
+
+Logikę związaną z serwerem najlepiej trzymać w serwisach, dzięki temu kilka komponentów będzie mogło korzystać z tych samych zapytań
+bez wiedzy o sobie nawzajem.
+
+
+28. Co oznacza pojęcie mockowania danych i jakie są jego zalety w testach?
+
+MOckowe dane są to takie, które zostały specjalnie przygotowane pod testy. Ich zaletą jest to, ze nie wpływamy na orginalne dane w bazie
+danych tylko testujemy na testowych danych spełniających warunki testu.
+
+
+
+RxJs & NgRx
+
+1. Co to jest RxJs? - ReactiveX JavaScript
+
+RxJs - jest to biblioteka która udostępnia sporą ilość operatorów do programowania reaktywnego.
+Programowanie reaktywne to jeden z paradygmatów programowania, pozostałymi są programowanie deklaratywne(język zapytań np.: SQL)
+i programowanie impreatywne(te najczęściej spotykane). Programowanie reaktywne polega na tym, że kod reaguje automatycznie na
+podane mu dane. Np.: reaktywnie poczeka na wciskiwanie klawiszy w searchu 2 sekundy, a następnie wyśle zapytanie o te wyszukiwanie.
+
+2. Wymień użyteczne operatory - oraz do czego służą?
+- combineLatest - ??? - jest po to aby łączyć ostatnie stany długo żyjących observabli, np.: kiedy potrzebujemy zczytać informację z wielu przycisków
+- concat - łączy strumienie danych "na płasko" po informacjach z pierwsszego strumienia idą z drugiego i każdego kolejnego
+- merge - łączy strumienie na płasko zahowując kolejność ich wywoływań się w czasie
+- startWith - przed strumieniem dodaje jeszcze do niego wartość podaną w nawiasach
+- withLatestFrom - łączy ze sobą 2 lub więcej strumieni z dla każdej z ostatniej dla nich wartości.
+
+- from - służy do kowertowania z promisy na observable
+- of - tworzy observabla z podanych danych i emituje je dalej w strumieniu
+
+- catchError - jeżeli w strumieniu pojawia się błąd to reaguje na niego w innym wypadku strumień idzie dalej swoim torem.
+
+- debounceTime - przesyła strumień danych dalej, dopiero po określonym czasie w tym operatorze
+- distinctUnitchanged - nie przepuszcza powtórek strumienia do puki jego wartość się nie zmieni ??? 
+- filter - sprawdza czy wartość / wartości w strumieniu spełniają warunek 
+- take - bieże ze strumienia ilość informacji określonych w nawiasach, a resztę pomija
+- takeUntil - bieże wartości do póki nie minie jakiś konkretny czas
+
+- bufferTime - po pewnym czasie przepuszcza wszsytkie dane które do niego przyszły w tym buforze
+- concatMap - nie rozumiem trochę przykłady były trochę mało czytelne ??? 
+- map - działa na tej samej zasadzie jak w tablicach - mapuje dane ze strumienia
+- mergeMap - scala dwa observable w jeden strumień (1 observable + 2 observable). 
+- scan - wykonuje funkcję(akumulator), na dowolnym seedzie - reaguje na bieżąco na wszystkie zmiany i je emituje - niby można tym zasymulować stora ???
+- switchMap - zapewnia łatwy mechanizm anulowania/przełączenia aktualnego żądania i w locie przełącza na na nowy callback. 
+
+- tap - polega na dotknęciu strumienia w obecnej formie i wykonanie na nim jakiejś operacji, a następnie wraca do swojej pierwotnej formy.
+
+*find
+*findIndex
+*delay
+ 
+3. Wyjaśnij co to jest Subject?
+
+Observer posiada metody: next, error, complete.
+Observable zawiera wszystkie obserwowalne operatory i można go subskrybować.
+
+Subject jest jednocześnie Observerem i Observablem.
+Kiedy subskrybujemy jakiś Subject oznacza to poinformuj mnie o każdej zmianie jaka wystąpi w subskrybowanym przeze mnie obserwatorze.
+
+Oczywiście można też użyć next(), error(), czy complete(), wtedy wartości, które tam się pojawią zostaną wysłane do 
+wszystkich pozostałych subskrybentów.
+
+Od observabla odróżnia go to, że posiada takie metody właśnie jak next(), error() i complete().
+
+4. Wyjaśnij co to jest Observable?
+
+Każdy Subject jest Obeservablem. Jest to strumień danych który Observatory obserwują.
+
+
+5. Wyjaśnij co to jest Observator?
+
+Każdy obiekt, który "chce" być poinformowany o zmianach w strumieniu.
+
+
+6. Wyjaśnij co to jest BehaviourSubject?
+
+Charakteryzuje się tym, że przechowuje "bieżącą" wartość. Zawsze można pobrać ostatnio wyemiotwaną wartość.
+Aby odszymać do niej dostęp można to zrobić na dwa sposoby: .value lub .subscribe
+
+
+7. Wyjaśnij co to jest ReplaySubject?
+
+ReplaySubject - jest to rozwinięcie podstawwego typu subjecta, który po za jego zwyczajnymi zachowaniami, ma również
+przedewszsytkim możliwość przechowywania poprzednich stanów. Podczas inicjowania określa się ilosć przechowywanych statnów oraz
+dodatkowo można podać czas przez jaki mają być one przechowywane odnadesłania ostatniej wartości (czas podawany w milisekundach).
+
+8. Wyjaśnij co to jest AsyncSubject?
+
+Jest to forma asynchronicznego Subjecta, czyli tylko ostatnia wartość obserwowalnego wykonania jest wysyłana do subskrybentów 
+i tylko po zakończeniu wykonywania.
+
+
+9. Wyjaśnij pojęcie programowania reaktywnego?
+
+Programowanie reaktywne w głównej mierze polega na tym, że przy określonych warunkach reaguje na przepływ danych, 
+w konkretny określony sposób.
+
+10. Co odróżnia Observable od Promise?
+
+Observable są deklaratywne. Obliczenia nie rozpoczynają się przed rozpoczęciem subskrybcji.
+Promisy działają natychmiast po stworzeniu. 
+Obserwable są bardziej kuteczne dzięki temu, bo dostajemy informacje tylko gdy jest to wymagane.
+
+Observable jest strumieniem danych(zawiera wiele wartości), promise zwraca tylko jedną wartość.
+
+
+11. Wyjaśnij co to NgRx?
+
+NgRx - jest to biblioteka który udostępnia koncepcje stora - czyli takiego magazynu danych
+
+12. Objaśnij 4 składowe NgRx'a? 
+
+Tymi elementami są:
+- akcje - 1
+- reducery - 2
+- selectory - 3
+- effekty - 4
+
+1. Akcje polegją na stworzeniu akcji oraz opisywaniu zdarzeń
+
+2. Recucery są pure function, opisują w jaki sposób na się zachować stor - czy nadpisać wykonać jakieś operacje na danych i zapisać 
+je w storze, czy po prostu zapisać je w storze, czy może wrócić do wartości początkowej.
+
+3. Selectory polegają na wycągnięciu informacji ze stora.
+
+4. Effekty, są to wszystkie mechanizmy, które reagują na przepływ danych - tutaj używa się RxJs'a oraz pojawaija się wszystkie 
+"efekty uboczne". Najprostrzym przykładem działania jest zapisanie danych do stora podczas wykonywania zapytani do bacnedu po jakieś dane.
+
+
+13. Czy wystarczy zbudować tylko te 4 pliki czy coś jeszcze?
+
+Nie trzeba również mieć model stora - interfejsy, które opisują pola jakie będą się znajdować w storze.
+Oraz zarejestrować trzeba reducer w module, albo stworzyć oddzielny moduł dla storowych plików i tylko ten podpiąć.
+Jeżeli podepniemy go do AppModule, to będziemy mieli do niego dostęp w całej aplikacji, a w przypadku, gdy gdzieś niżej to tylko od drzewa
+w dół będziemy mieli dostęp do tego stora. 
+
+
+
+WEB
+
+1. Jak działa mechanizm CORS? Co nam daje i jak należy z nim pracować?
+
+CORS - jest to mehanizm, który umożliwia, a w sumie nadzoruje współdzielenie danych pomiędzy serwisem, a innym serwisem, 
+bądź serwisem, a serwerem  klienta. Konfugurowane w głównej mierze po stronie Backendowej.
+
+2. Czym jest PWA?
+
+PWA - Progresiw Web Application - strona internetowa, lecz zbudowana w taki posób, że imituje zachowanie aplikacji 
+komputerowych/desktopowych. Poprawne użycie tej metody może zwiększyć wydajność oraz przyjemność z użytkowania.
+
+
+3. Czym jest RWD?
+
+RWD - responsie web design - sposób projektowania aplikacji który mówi o tym, żę dana webowa aplikacja jest przygotowana 
+pod różne urządzenia mobilne, a nie tylko na wysokiej rozdzielczości moitory komputerów.
+
+
+4. Co to jest service worker?
+
+Service worker to system mający za zadanie rozwiązywać problemy strony internetowej w przypadku utraty połączenia z serverem.
+
+
+5. Co to jest web worker?
+
+Jest to skrypt, który gdy jest odpalany to wszsytkie pozostałe skrypty na stronie przestaja działać, na czas jego wykonywania.
+
+
+6. Co to jest JSONP?
+
+Historyczna technika odbierania danych elementów JS, który jest elementem przeznaczonym do ładowania zwykłego JS.
+Raczej nie muszę tego pamiętać.
+
+
+7. Na czym polega atak XSS? - domyślnie angular chroni przed nim
+
+Polega na wstrzyknięciu obcego kodu do JS'a. Standartowo angular chroni przed takimi zachowaniami użytkowników. 
+
+
+8. Czym jest sanitizing?
+
+Jest to atak podobny do XSS, ale polega na wstrzykiwaniu zapytań SQL
+
+
+9. Czym jest MITM atak?
+
+Man in the Middle - polega na podsługu. odbieraniu informacji od nadawcy, a następnie modyfikowaniu ich i wysyłania do odbiorcy.
+
+
+10. Czym jest phising?
+
+Phising jest jednym z ataków internetowych, który opiera się na nie wiedzy / nie uwadze użytkownika. Ma on na celu zdobycie
+jakiś informacji, które można zmonetyzować, bąx uzyskanie samych pieniędzy. Jednym z głośnieszych prób pihisinu była ostatnia
+lawina na portalu olx - było dużo zgłoszeń o podszywanie się pod podstronę z płatnościami tego serwisu. 
+
+
+Linki o ćwiczonek które warto jeszcze przerobić:
+
+https://codesandbox.io/s/empty-frost-7pv8h?file=/src/1-object-arrays.js
+https://codesandbox.io/s/angular-2-cwiczenie-1-forked-h3y47?file=/src/app/app.component.html:171-438
+
+

@@ -1,0 +1,291 @@
+============
+NGRX vs RXJS
+============
+
+=================================
+Differences between Ngrx and RxJs
+
+Reaktywne programowanie - kod jest reaktywny kiedy wysyła informację o zmianach, zamiast odwoływać się cały czas do nich.
+
+NgRx(Store) służy do reaktywnego budowania aplikacji, czyli jest to zbiór bibliotek Angularowych używany do 
+tworzenia reaktywnego oprogramowania i implementującego wzorce Redux oraz używając Observale's z RxJs.
+Oferuje on różne korzyści poprzez uproszczenie stanu aplikacji do zwykłych obiektów, tym samym wymuszając przepływ danych.
+
+
+Za pomocą effektów i NgRx jest możliwa komunikacja aplikacji z zewnętrznym środowiskiem internetu, np.: serwerem.
+
+
+RxJS jest narzędziem, które jest używane w NgRx. Znajdują się tam między innymi obserwatory oraz inne użyteczne
+operatory, które w prosty sposób pomagają przekształcić przychodzące dane. Dzięki Observablom nie widzimy jedno 
+pojedzyncze zdarzenie, lecz serię zdarzeń. Odpowiednio subskrybując (śledząc) strumień możemy automatycznie być 
+informowani o wszelkich zmianach z jakimi jest powiązany strumień.
+
+Założeniem jest, żeby bezpośrednio komponent był informowany o zmianach i odpowiednio na nie reagował.
+
+
+
+STORE - może być traktowany jako pewna forma bazy danych, ale tylko i wyłącznie po stronie FE/klienta. Co istotne 
+zawsze odzwierciedla rzeczywisty stan aplikacji, a przynajmniej powinno się do tego dążyć.
+
+REDUCERY - są funkacjami, które "wiedzą" co zrobić z daną akcją, która została wywołana oraz jaki jest stan Stora
+aplikacji w konkretnym momencie.
+Reducery zawsze zwrócą to samo dla tych samych danych oraz nigdy nie mają skutków ubocznych w działaniu
+(oznacza to, że są to funkcje Pure - czyste).
+
+Akcje - posiadają informację, która tłumaczy co będzie się działo oraz informacje, które mają zostać przekazane do Stora. 
+
+Dispach - można je tłumaczyć jako punkt wejścia z poziomu komponentu
+
+Middleware (są to chyba efekty ??? ) - są to funkcje, które przechwytują konkretne akcje. Następnie wykonują na nich określoną
+procedurę, którą nalepiej reperezentować za pomocą programowania funkcyjnego.
+
+
+
+DLACZEGO LUDZIE UŻYWAJĄ NGRX ???
+
+* Złożoność - dzięki ngrx przepływ danych można nazwać już jednostronnym przez co znacznie jest zmniejszona złożoność oprogramowania.
+* Reprezentatywność - w storze, zawsze jest przechowywany pełen stan aplikacji dzięki czemu nie tracimy istotnych informacji.
+* Prosta jednolita architektura
+* Niezbyt wysoki próg wejścia/przyswojenia wiedzy
+
+
+
+===========================
+RxJs - ReactiveX JavaScript
+
+catchError - jeżeli w strumieniu pojawia się błąd to reaguje na niego w innym wypadku strumień idzie dalej swoim torem.
+
+filter - sprawdza czy wartość / wartości w strumieniu spełniają warunek. Te które spełniają lecą dalej przez ten strumień.
+
+map - wygląda bardzo podobnie jak JS na tablicach - wykonuje konkretną operację na strumieniu
+
+pluck - przekazuje wartość pojedynczego pola do subskrypcji, zamiast wysyłać cały obiekt JSON / spłyca subskrybcję.
+
+mergeMap - scala dwa observable w jeden strumień (1 observable + 2 observable). 
+Kolejne funkcje czy subskybcja muszą poczekać, aż mergeMap wykona swoją pracę. 
+
+switchMap - zapewnia łatwy mechanizm anulowania/przełączenia aktualnego żądania i w locie przełącza na na nowy callback. 
+
+withLatestFrom - łączy ze sobą 2 lub więcej strumieni z dla każdej z ostatniej dla nich wartości.
+
+debounceTime - przesyła strumień danych dalej, dopiero po określonym czasie w tym operatorze.
+
+tap - polega na dotknęciu strumienia w obecnej formie i wykonanie na nim jakiejś operacji, a następnie wraca do swojej pierwotnej formy.
+Dlatego tap najczęście można używać w czynnościach typu console.log czy coś w tym stylu.
+
+mapTo - za każdym razem kiedy ze strumienia jest odszymywana jakaś informacja, to mapTo wysyła swoją informację.
+
+find - przekazuje ze strumienia danych tylko pierwszą wartość, która spełnia warunek. Reszta jest pomijana.
+
+findIndex - emituje tylko index ze strumienia który spełnia warunek. Reszta jest pomijana.
+
+delay - opóźnia wysłanie informacji o pewien odstęp czasu
+
+zip - poczeka, aż cały strumień zostanie wyemitowany, a następnie pakuje całkość do tablicy jako jeden strumień.
+
+
+PÓŹNIEJ WARTO SIĘ NAUCZYĆ MARBLE DIAGRAMS
+
+https://rxjs.dev/api/operators
+
+=====
+NgRx
+
+Ngrx - jest to rozwiązanie Angularowe zinspirowane Reduxem. NgRx wprost implementuje koncepcję Stora - kontrolowanego
+kontenera stanu aplikacji, w którym przwchowuje się wszystkie istotne informacje w aplikacji. 
+
+
+
+Akcje - opisują unikalne zdarzenia w aplikacji. Od interakcji użytkownika poprzez żądania sieciowe i bespośrednią komunikacją z API.
+Semantyka:
+
+import { createAction, props } from '@ngrx/store';
+
+export const login = createAction(
+  '[Login Page] Login',
+  props<{ username: string; password: string }>()
+);
+
+Dobrą praktyką jest pisanie zewnętrznej klasy zawierającej wszystkie akcje z danego pliku/modułu.
+Akcje możemy po prostu dispatchować.
+
+
+
+
+Reducery - są odpowiedzialne za przejście z jednego stanu w drugi. Reduktory opisują sposób przechodzenia z jednego w drugi stan.
+
+Reduktory są funkacjami czystymi -> nie mają nigdy żadnych skutków ubocznych i synchronicznie obsługują każdą zmianę stanu. Każda 
+funkcja reduktora pobiera ostatnio wywoływaną akcję oraz obecny stan stora i określa czy zrócić nowy zmodyfikowany stan, czy zwrócić wartość startową.
+
+reducer oczywiście musi importować odpowiednie pliki -> 
+- plik w których są opisane akcje jakimi się będzie posługiwać reduktor
+
+Następnie mamy eksportowany interfejs, który zawiera model stora -> czyli obiekt stora
+
+Dalej tworzymy reduktor z opisanym stanem startowym oraz opisanie co się dzieje w przypatku każdej akcji.
+
+const scoreboardReducer = createReducer(
+  initialState,
+  on(ScoreboardPageActions.homeScore, state => ({ ...state, home: state.home + 1 })),
+  on(ScoreboardPageActions.awayScore, state => ({ ...state, away: state.away + 1 })),
+  on(ScoreboardPageActions.resetScore, state => ({ home: 0, away: 0 })),
+  on(ScoreboardPageActions.setScores, (state, { game }) => ({ home: game.home, away: game.away }))
+);
+
+Zawsze na sam koniec trzeba jeszcze stworzyć plik w którym "rejestrujemy" nasz reduktor w aplikacji - podpinamy go, np.:
+
+import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+import * as fromScoreboard from './reducers/scoreboard.reducer';
+
+@NgModule({
+  imports: [
+    StoreModule.forFeature(fromScoreboard.scoreboardFeatureKey, fromScoreboard.reducer)
+  ],
+})
+export class ScoreboardModule {}
+
+Można go podpinać bezpośrednio do AppModule, albo (co zalecane) wydzielić sobie oddzielny moduł na same rejestracje reduktorów.
+
+
+
+
+Selectory - są czystymi funkcjami, które służą do uzyskiwania informacji o bieżącym wybranym wycinku stanu stora.
+Podczas używania selectorów, będziemy używać funkcji createSelector oraz createFeatureSelector.
+
+Selectory cechują sie pewnymi zaletami:
+- Testowalność
+- Bezpieczeństwo typu
+- Dostępnością
+- Kompozycją
+- Memoryzacją
+
+Selectory mają "zapamiętany" ostatni swój stan i są dostępne w całej "aplikacji" dzięki czemu omijane jest zbędne wykonywanie powtórnych obliczeń. Oszczędność czasu.
+
+Przykład użycia:
+export const getFeature = (state: AppState) => state.feature;
+
+export const selectFeature = createSelector(
+  (state: FeatureState) => state.counter /// lub inne selectory odnoszące się do obecnego statu
+  getFeature
+);
+
+Ciekawostka funkcja create selector może przyjąć do 8 funkcji stanu.
+Selector oczywiście może również wykonywać drobne sprawdzanie danych, aby na podstawie tego zwracać odpowiednie wartości ...
+
+
+
+Effekty - wszystkie "efekty uboczne", czyli zmiany, które mają się odbywać na danych w storze odbywają się właśnie za pomocą efektów.
+Efekty działają  na strumieniu danych i odpowiednio go przekształcają. Efekty są używane między innymi przy długotrwałych i wielkozadaniowych
+zdarzeniach, czy też takich szybkich zdarzeniach jak pobieranie danych.
+
+Kluczowe kwestie:
+- efekty odizilowywują logikę wychodzączą poza obaszr kompetencji komponentu, dzięki czemu stają się one komponentami czystymi(albo istotnie czystszymi).
+- efekty to długo działające usługi, które cały czas nasłuchują strumień czy pojawiły się jakieś zmiany.
+- efekty filtrują akcje te które je na obecny moment interesują od pozostałych.
+- efekty reagują za równo na kod synchroniczny jak i na asynchroniczny.
+
+Najprostszym działaniem jest, gdy zostanie wykonane zapytanie http przez serwis o dane to "efektem ubocznym" będzie przechwycenie tej akcji przez efekt i
+załadowanie ich do stora. Dzięki czemu dane się "nie zgubią".
+Dzięki nim także jest możliwe obsłużenie błędów pochodzączych z odpowiedzi na zapytania http.
+
+!!!!! WAŻNE !!!!!
+
+Każdy efekt musi zostać zarejestrowany w module. Najlepiej w appModule, albo jakimś dedykowanym module na same efekty.
+
+1 metoda
+@NgModule({
+  imports: [
+    EffectsModule.forRoot([MovieEffects])
+  ],
+})
+
+2 metoda
+providers: [
+  MovieEffects,
+  {
+    provide: USER_PROVIDED_EFFECTS,
+    multi: true,
+    useValue: [MovieEffects],
+  },
+]
+
+https://ngrx.io/guide/store
+
+=======
+Subject
+
+Observer posiada metody: next, error, complete.
+Observable zawiera wszystkie obserwowalne operatory i można go subskrybować.
+
+Subject jest jednocześnie Observerem i Observablem.
+Kiedy subskrybujemy jakiś Subject oznacza to poinformuj mnie o każdej zmianie jaka wystąpi w subskrybowanym przeze mnie obserwatorze.
+
+Oczywiście można też użyć next(), error(), czy complete(), wtedy wartości, które tam się pojawią zostaną wysłane do 
+wszystkich pozostałych subskrybentów.
+
+
+      * Trochę średnio rozumiem, poza faktem, że sujbecty można po prostu subskrybować ?!?!?
+
+==============
+Typy Subjectów
+
+Wszystkie 3 pochodzą z RxJs.
+
+BehaviourSubject: Charakteryzuje się tym, że przechowuje "bieżącą" wartość. Zawsze można pobrać ostatnio wyemiotwaną wartość.
+Aby odszymać do niej dostęp można to zrobić na dwa sposoby: .value lub .subscribe
+W przypadku kiedy się subskrybuje Subject to nawet jeżeli wartość później zostanie dostarczona to BehaviourSubject "wyłapie" ją.
+
+
+ReplaySubject: Na pewien sposób przechowuje "stare" wartości do nowych subskrybentów. Jego dodatkową własciwością jest to, że może
+"część" obecnego procesu.
+Podczas tworzenia ReplaySubjecta poza strumieniem określa się także ile wartości chce się przechowywać oraz jak długo. 
+Np.: maksymalnie 3 ostatnie wartości, które pojawiły się do 2 sekund po ostatniej nadesłanej wartości.  
+const subject = new Rx.ReplaySubject(3, 2000);
+
+
+AsyncSubject:
+Jest to forma asynchronicznego Subjecta, czyli tylko ostatnia wartość obserwowalnego wykonania jest wysyłana do subskrybentów 
+i tylko po zakończeniu wykonywania.
+
+
+Wniosek BehaviourSubject, ReplaySubject oraz AsyncSubject są wciąż Subject'ami, które są poszerzone o dodatkowe, ale wciąż
+użyteczne element.
+
+https://www.learnrxjs.io/learn-rxjs/subjects/behaviorsubject
+https://luukgruijs.medium.com/understanding-rxjs-behaviorsubject-replaysubject-and-asyncsubject-8cc061f1cfc0#:~:text=But%20rxjs%20offers%20different%20types,about%20Subjects%3A%20Understanding%20rxjs%20Subjects.
+
+=======================
+Programowanie reaktywne
+
+Programowanie impreratywne - instruuje komputer krok po kroku jakie czynności ma wykonać. Najbardziej popularny sposób pisania oprogramowania.
+Programowanie deklaratywne - opisuje się efekt jaki chce się uzyskać. Przykładem języka deklaratywnego jest SQL - tworzymy zapytania które mówią, 
+że chcemy odszymać konkretny zbiór danych w tabeli.
+
+Programowanie reaktywne jest to programowanie wykorzystujące asynchroniczne strumienie danych. A strumieniem może być tak na prawdę wszystko.
+Jest to kolejny paradygmat programowania, którego metodologia działania opiera się na zdarzeniach w kodzie. Umożliwa to osiągnięcie luźnego powiązania, a
+komponenty docelowo będą reagować w odpowiedzi na konkretnie odszymane dane.
+
+Przykład polecenia napisanego reaktywnie:
+const selectedTeams$ = rxjs.fromEvent(teamsInput, 'keyup').pipe(
+   rxjs.operators.map(event => event.target.value),
+   rxjs.operators.debounceTime(500),
+   rxjs.operators.map(teams=> teams.split(',')),
+   rxjs.operators.startWith(null)
+ );
+
+selectedTeams zostanie zapisana aktualną listą wybranych zespołów dodatkowo pracuje na strunieniach danych - operacje takie jak map czy debounceTime wykonują się asynchronicznie.
+
+Do programowania reaktywnego jest wykorzystywany RxJs w języku JavaScript.
+
+
+===========
+Observable
+
+Co odróżnia Observable od Promise:
+- Promise może zwrócić wartość zaledwie raz, Observable wielokrotnie
+- Observable może zostać anulowane
+- Observable udostępnia zestaw metod do wygodnego filtrowania i operowania na danych znajdujących się w strumieniu
+- Observable zapewnia ujednolicone API do zarządzania zdarzeniami, bez względu na to jakie jest ich źródło (elementy drzewa DOM, zapytanie HTTP, timer)
+
+https://rxjs-dev.firebaseapp.com/guide/observable?ref=codebldr

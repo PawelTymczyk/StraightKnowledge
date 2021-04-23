@@ -1,0 +1,151 @@
+https://github.com/leonardomso/33-js-concepts
+
+==========
+EVENT LOOP
+
+call stack - stos wywołoń (funkcji najczęściej) - bufor typu LiFo - wszystie wywołańa pokolejni są 
+zbierane i od odstatniego dorzuconego zostają one wywołane
+Maksymalna pojemność stosu to 16 000 wywołań
+
+call quene - kolejka wiadomości - FiFo wywołania wiadomości są wywolywane w kolejności takiej jakiej się pojawiły na tej kolejce 
+
+Heap - sterta - przechowywane są tam dynamicznie tworzone struktury danych w czasie trwania samego programu.
+Za zwalnianie pamięci z nieużywanych elementów odpowiada garbage collector.
+
+setTimeout() - podana jest minimalna wartość w milisekundach, po której wykona się kod 
+- może wywołaś się później niż zakładane z powodu innych elementów w stosie lub kolejce
+
+mikrotaski - obszar który obsługuje kod asynchroniczny - z tego obszaru może podczas jednej pętli zejść więcej niż jeden element 
+znajdują się tam między innymi setTimeout(), Promise oraz ręcznie napisane funkcje asynchroniczne. 
+
+Fajny przykład event loop'a: https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif
+
+
+=====================
+CALL() APPLY() BIND()
+
+call - redefiniuje instancję obiektu na czas wywołania, każdy element funkcji wywołującej jest samodzielnym elementem
+* cylinder.volume.call({pi: 3.14159}, 2, 4);
+
+
+apply - redefiniuje instancję obiektu na czas wywołania, początkowe elementy są wartościami obiektu,
+natomiast elementy funkcji można podać w tablicy
+* cylinder.volume.apply({pi: 3.14159}, [2, 4]);
+
+Wniosek: call i apply są do siebie nawzajem stosunkowo podobne
+
+
+bind - zwraca nową instancję obiektu ze zmienionymi polami
+
+WNIOSKI:
+- Wszystkie 3 funkcje są podobne, pierwszy argument odnosi się do THIS tego obiektu.
+- call i apply są wywoływane natychmiast, natomiast bind zwraca funkcję powiązaną, która później może zostać wywołana.
+
+==============================
+OBJECT.CREATE() OBJECT.ASIGN()
+
+create - tworzy obiekt na podstawie innego obiektu i traktuje go jako prototyp dla nowego
+
+asign - zwraca połączony obiekt w jeden, pierwszy łączony obiekt też jest rozszerzony
+
+=========
+RECURSION - czyli rekurencja    
+
+=======
+PROMISE
+
+Jest to proxy dla wartości, która w momencie wywołania nie jest jeszcze znana w momencie stworzenia.
+Dzięki temu  metody asynchroniczne zwracają wartości takie same jak metody synchroniczne.
+Czyli promisy nie zwracają natychmiastowo wartości tylko "obietnicę" dostarczenia tej wartości, bądź innego wyniku.
+Promisy może mieć jeden z trzech stanów:
+- początkowy
+- spełniony
+- odrzucony
+
+Przykładowy promis: 
+const wait = time => new Promise((resolve) => setTimeout(resolve, time));
+
+wait(3000).then(() => console.log('Hello!')); // 'Hello!'
+
+Struktura każdego promosia wygląda w taki sposób
+promise.then(
+  onFulfilled?: Function,
+  onRejected?: Function
+) => Promise
+
+wyłapywanie errorów nie musi być zawsze w catch - może być także obsłużone za pomocą then'a
+
+===========
+ASYNC/AWAIT
+
+Przykład: 
+
+function scaryClown() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('🤡');
+    }, 2000);
+  });
+}
+
+async function msg() {
+  const msg = await scaryClown();
+  console.log('Message:', msg);
+}
+
+msg(); // Message: 🤡 <-- after 2 seconds
+
+
+async / await - oznaczenie w ten sposób fregmentu kodu powoduje, że staje się on asynchroniczny, ale z zachowaniem cech synchroniczności
+async i await również nie blokują wwykonywania się oprogramowania
+
+Głównym celem jest uproszczenie zachowania Promisa przy synchonicznym korzystaniu z nich.
+
+
+async - nakazuje funkcji zwrócenie Promisa. Jeżeli kod zwrócony nie jest w postaci Promisa to JS automatycznie owarpowywuje go w Promisa.
+
+await - sprawia, że funkcja "czeka" na promisa i funkcja staje się również bardziej przejrzysa i czytelniejsza.
+Await po prostu sprawia, że ​​JavaScript czeka, aż obietnica się ustabilizuje, a następnie kontynuuje z wynikiem. 
+W międzyczasie, gdy czeka, silnik wykonuje inne zadania, takie jak uruchamianie skryptów i obsługa zdarzeń. 
+W ten sposób żadne zasoby procesora nie zostaną utracone.
+
+===============
+DESIGN PATTERNS
+
+Użytecznymi prototypami są:
+- singleton - jest tylko jedna istniejąca instancja na obszarze całego programu 
+- modłułu - są to po prostu klasy w JSie - jedną z najistotniejszych zalet tego rozwiazania jest hermetyzacja
+- prototyp - jest to dziedziczenie prototypowym w JSie, jest używany głównie do tworzenia struktury obiektów które wpsółdzielą między sobą pewne cechy - pola
+
+==============
+Prototyp ARRAY
+
+- reduce() - nie ogarniam tego na tyle dobrze, żeby swobodnie tego używać
+
+- map() - zwraca tablicę na której wykonano jakąś funkcję
+- filter() - zwraca tablicę tylko dla tych elementów tablicy, których warunek jest prawdziwy
+- join(',') - zwraca połączoną całą tablicę w jednego stringa i w nawiasach podaje się separator 
+- every() - zwraca true, jeżeli każdy z elementów z tablicy spełnia warunek
+- some() - zwraca true, jeżeli którykolwiek z elementów z tablicy spełnia warunek
+- concat() (przyjmuje więcej niż jedną tablicę) - zwraca złączoną tablicę z kilku innych tablic
+- find() - zwraca pierwszy element który spełnia warunek funkcji
+- findIndex() - zwraca index pierwszego elementu który spełnia warunek funkcji
+- flat(X) - spłacza tablicę o X (liczba) poziomów - ciekawostka czyści puste miejsca w tablicy
+oraz kiedy X będzie większy niż ilość poziomów to zrzuci po prostu do 1 wymiarowej tablicy
+- includes() - zwraca true/false w zależności od tego czy podany element zawiera się w elementach z tablicy
+- isArray() - stwierdza czy element na którym została wywołana metoda jest tablicą
+- lastIndexOf() - przeszukuje całą tabilcę od końca i zwraca index ostatniego elemntu który się pojawia w niej
+gdy w tablicy nie ma tego elementu zwracana jest zamiast tego wartość -1 
+- pop() - zwraca ostatną wartości z końca tablicy, a z niej samej wyrzuca ten element
+- shift() zwraca pierwszą wartość z początku tablicy, a z niej samej wyrzuca ten element 
+- push() - dodaje nową wartości na koniec tablicy i zwraca jej nową długość
+- unshift() - dodaje nową wartość na początek tablicy i zwraca jej nową długość
+- reverse() - odwraca kolejność elementów w tablicy ostatni staje się pierwszy ...
+- slice(X, Y) - zwraca wycięty fragment tablicy nie edytując oryginału
+- splice(X, Y) - Zmienia zawartość tablicy, dodając nowe elementy podczas usuwania starych elementów.
+
+
+
+ŹRÓDŁO:
+
+https://github.com/leonardomso/33-js-concepts

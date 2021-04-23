@@ -1,0 +1,369 @@
+=======
+ANGULAR
+=======
+
+=======================================
+Różnice między komponentem, a dyrektywą
+
+@Component ({
+    selector: 'my-selector'
+    template: (html code)
+    styles: (css code or something like this)
+
+})
+export class ...
+
+
+@Directive ({
+    selector: 'my-selector'
+})
+export class ...
+
+Pierwsza różnica polega na definiowaniu komponentu i dyrektywy. 
+Dyrektywa to sam kod napisany w tsie, natomiast component ma również referencje do plików css oraz html.
+
+- Component tworzy/służy do tworzenia nowego widoku (shadow DOM), a Dyrektywa służy do dodania zachowania do istniejacego elementu DOM.
+- Za pomocą komponetów można dzielić aplikację na mniejsze moduły, gdy Dyrektywy tego nie potrafią.
+- Componenty są to moduły do wielokrotnego użytku, podczas gdy Dyrektywy służą do stworzenia zachowania wielokrotnego użytku.
+- Component wymaga template/url, które są obowiąskowe, podczas gdy dyrektywa wymaga tylko selektora. - element składni
+
+===============
+Lifecycle Hooks
+
+
+ngOnChanges - wywoływany za każdym razem kiedy zmienia się wartość pola oznaczonego dekoratorem @Input()
+
+ngOnInit - wywoływany tylko raz podczas tworzenia komponentu, wywoływany po konstuktorze
+
+ngDoCheck - reaguje na zmianę każdego innego pola niż @Input - lecz nie zaleca się, ponieważ aplikacja możne poważnie zacząć zwalniać
+
+ngAfterContentInit - po inicjalizacji <ng-content> - tylko raz
+
+ngAfterContentChecked - po każdej zmianie w <ng-content> - wiele razy
+
+ngAfterViewInit - po zainicjalizowaniu widoku komponentu - tylko raz
+
+ngAfterViewChecked - po każdej zmianie w widoku - wiele razy
+
+ngOnDestroy - przy "zniszczeniu" komponentu - tylko raz
+
+https://fsgeek.pl/post/angular-cykl-zycia-komponentu/
+
+========================
+Mechanizm detekcji zmian
+
+Default/OnPush
+
+Umożliwia ręczne włączenie i wyłączenie wykrywania zmian na stronie. Standardowa opcja przeładowywuje całość.
+OnPush służy do wykrycia zmiany, a następnie dopiero wtedy component zostaje przeładowany, a nie cała strona,
+
+Zmiana jest propagowana, aż do elementów DOM. Śłuży ona po prostu do śledzenia zmian w komponencie i przeładowanie ich w wybrany sposób.
+Każdy komponent indywidualnie może mieć wybierany tryb on push i ustawia się go w dekoratorze.
+
+Domyślnie każdy komponent na jakąś zmianę stany w aplikacji, inputy, zdarzenia DOM(Document Object Modlel) ... Każda zmiana przy 
+podstawowych ustawieniach powduje pokoleji przeładowanie każdego komponentu w momencie wykrycia zmiany jest on oznaczany jako brudny 
+(mechanizm ten nazywa się "Dirty Checking"). Następnie są dokonywane poprawki modelu na drzewie DOM.
+
+Przy starategii OnPush wykrywanie zmian jest wykrywany - zależny tylko i wyłącznie od swoich Inputów - taki komponent nazywany "czystym".
+Przy tym rozwiązaniu komponent sam informuje mechanizm detekcji zmian, dzięki czemu w oczywisty sposób wiadomo co trzeba zaktualizować.
+Dzięki takiemu podejsciu drastycznie zmniejsza się kosztowność aktualizowania widoku aplikacji.
+
+Im większy projekt (więcej komponentów) tym bardziej miarodajny przyrost wydajności.
+
+=================================
+Angular Pipe - jak tworzyć własne
+
+Wbudowane pipe'y:
+- DatePipe
+- UpperCasePipe
+- LowerCasePipe
+- CurrencyPipe - zamienia liczbę na lokalną walutę w postaci stringa
+- DecimalPipe - zmienia liczbę w decymalną liczbę zapisaną w stringu
+- PercentPipe - zmienia liczbę w stringa z procentami
+
+| - pipe operator 
+
+przykład użycia: {{ var | date:"MM/dd/yy" }} ,  {{ var | date }}
+
+
+Można tworzyć własne pipey:
+
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+    name: 'name',
+    pure: false,
+})
+export class ExponentialStrengthPipe implements PipeTransform {
+  transform(value: number, exponent?: number): number {
+    return Math.pow(value, isNaN(exponent) ? 1 : exponent);
+  }
+}
+
+Za równon Pipe, jak i PipeTransform są niezbędne do stworzenia własnego pipe
+W dekoratorze jest napisana sama nazwa pipe, nawet jeżeli nie dopiszemy tam użycia transform z PipeTransform to i tak automatycznie je doda.
+Implements PipeTransform jest niezbędne.
+transform jest to funkcja odpalana domyślnie w pipe i zawsze musi ona zwrócić jakąś wartość - ponieważ pipe'y służą do zmieniania modyfikowania treści.
+
+pure - dodatkowa opcja do dekoratora mówiąca o tym czy owy pipe jest czystny czy nieczysty.
+Czyste Pipe'y są pierwszego poziomu, a każdy który rozszerza już istniejący pipe jest już impure i trzeba już to zaznaczyć w jego dekoratorze.
+
+
+=====================================================================
+Zmiany w sposobie immutable i jakie dają korzyści w pracy codziennej ?
+
+Jest to jednen z wzorców projektowych, któy polega na tym, że nie zmienia się treści oryginalnego elementu, lecz pracyjemy na kopii.
+Dzięki temu nie napotakamy w późniejszym działaniu aplikacji niepotrzebnych błędów wynikajacych z odniesienia się do obiektu,
+który mógłby być zmieniony.
+
+=====================
+Polecenia Angular CLI
+
+Jest to interfejs ułatwiający generowanie projektu wraz z odpowiednimi zależnościami. Umożliwia generowanie komponentów dyrekty i pozostałych elementów.
+Obok tego umożliwa również za pomocą konsoli odpalenie oprojektu na środowisku lokalnym, jak i zbudować całą finalną aplikację.
+Każdy generator ma możliwość konfugurowania (boolean options) - czyli ustawianie konkretnych flag na true/false.
+
+Kilka przykładowych poleceń
+npm install -g @angular/cli
+ng help
+ng new my-first-project
+ng serve --o 
+ng build my-app -c production
+
+==========================================
+Przekazywanie danych pomiędzy komponentami
+
+- Inputy()                  przykład:
+
+W docelowym komponencie: @Input() zmienna: typZmiennej;
+Przy wywołaniu komponentu w komponence nadrzędnym: [zmienna]="zmienna"
+
+To jest przekazanie wartości w gół.
+
+
+
+- Outputy()                 przykład:
+
+W komponencie podrzędnym:                           @Output() emitter: EventEmitter<null> = new EventEmitter();
+Przy wywołaniu komponentu w komponence nadrzędnym:  [isOpen]="sideBarIsOpened"
+
+To jest przekazanie wartości w górę.
+
+
+
+- Za pomocą serwisów
+https://stackblitz.com/edit/angular-communication-3?file=app%2Fside-bar%2Fside-bar.component.ts
+
+===========================================
+Idea serwisów i do czego są wykorzystywane?
+
+Serwisu służą do zarządzania zasobami danych - pobierania, wysyłania danych.
+Serwisy dają możliwość współdzielenia informacji po między częściami aplikacji, które nawet nie muszą o sobie nawzajem wiedzieć.
+Serwisy służą do tworzenia logiki, która ma być współdzielona pomiedzy różnymi częściami aplikacji.
+
+@Injectable() - dekorator, który odpowiada za oznakowanie pliku jako serwisu
+
+
+========================
+Elementy składowe modułu
+
+Każdy moduł musi posiadać dekorator @NgModule():
+- declarations: zbiór deklaracji elemntów, które należą do tego modułu. Muszą się one tutaj pojawić w ramach "rejestracji" elementu. 
+- export: zbiór deklaracji, które mogą być użyte w innych modułach
+- import: zbiór deklaracji pochodzących z inncyh mogułów, które są exportowane w swoich modułach rodzimych
+- providers: średnio zrozumiałem co ten robi ... bardziej intuicyjnie go używałem zawsze
+- bootstrap: średnio zrozumiałem co ten robi ... nie spotkałem jego nigdy w kodzie
+
+
+====================
+FORROOT AND FORCHILD
+
+forRoot() - jest to funkcja zwracająca instancję interfejsu. - Dzięki temu mamy wybór czy importować moduł wraz z serwisami czy bez nich.
+Umieszczenie w tym serwisu czy pipe'a umożliwia decydowanie czy ma być on widoczny poza tym modułem czy też nie.
+
+Jeżeli umieścimy w imporcie innego modułu [moduł].forRoot() - umożliwimy mu wykorzystanie serwisów wcześniej tam umieszczonych.
+!!! nic to nie ma wspólnego ze singletonem !!! - wieloinstancyjność można osiągnąć tworząc nowe injectory.
+
+Generalnie metoda forRoot zapewnia przed wielokrotnym i niepotrzebnym ładowaniem serwisów.
+
+
+
+forChild() - można go określić leniwym doczytywaniem modułów
+Przykłady użycia:
+- kiedy serwis ma działać inaczej w tym konkretnym module niż w reszcie aplikacji
+- jeżeli chcemy jakiemuś serwisowi dostarczyć dane - wtedy metoda forChild zwraca pustą tablicę serwisów,
+jednak przyjmuje jakąś wartość, z którą coś później robi
+
+Przykładem takiego modułu jest RouterModule.
+
+====================
+DEPENDENCY INJECTION
+
+DI - to w zasadzie mapa (provide: klucz, useValue: wartość)
+
+const inject = Injector.create([
+    {provide: klucz, useValue: wartość}
+]);
+
+inject.get("klucz");
+
+
+Rejestracja serwisu, który można wstrzykiwać:
+
+@Injectable({
+  providedIn: 'root',
+})
+export class MyService {
+    ...
+}
+
+wstrzykuje się zależność w konstruktorze komponentu np.:
+component(private myService: MyService){}
+
+Jeżeli wstrzyknięty w komponent token nie potrafi odnaleźć rejestracji, to podróżuję w górę przez "komponenty rodzicielskie" .
+
+Jeżeli nie zostanie odnaleziony - to zatrzyma się na null Injectorze, który jest chyba prototypem każdego innego.
+
+"Drzewo wstrzyknięć" - poniżej jest pokazana hieriarchia wstrzyknięć. Każdy z nich ma rodzica (prototyp), poza wsrzykiwaczem null'owym.
+
+           null
+            | 
+         platform
+            |
+           root
+ Dalej są normalne komponenty.
+
+Istnieją również inne sposoby wstrzykiwania i rejestrowania swrwisów, jadnakże są one już żadziej używane.
+
+* w providedIn podczas rejestracji można użyć dowolnej wartości - null, platform, root lub NAZWA_MODULU
+
+Nie powinno się wstrzykiwać serwisów na poziomie pliku module.ts 
+NgModule są zazwyczaj zarejestrowane jako standardowe ścieżki wstrzyknięć.
+W przypadku Lazy Loading wstrzykiwacze są nie widoczne poza tym modułem.
+
+Kiedy chemy używać DI na tych poziomach zaleca się używania providedIn jako any.
+
+Można wstrzykiwać bezpośrednio w KOMPONENTACH jak i także w DYREKTYWACH.
+
+
+providers: [], - wstrzyknięcie serwisu oznacza także udostąpnienie wszsytkich jego składowych komponentom niższego szczebla
+viewProviders: [], - ogranicza wstrzykniety serwis tylko do poziomu tylko tego jednego komponentu, komponenty niższego szczebla
+nie widzą juz go w komponencie rodzicu.
+
+https://dev.to/christiankohler/angular-dependency-injection-infographic-1bjm
+
+===============
+INJECTION TOKEN
+
+Dzięki InjectionToken, możemy np. do komponentu dostarczyć obiekt konfiguracyjny, który zostanie zdefiniowany wyłącznie raz
+np. w AppModule, czyli polega na wstrzykiwaniu sparametryzowanych obiektów/instancji komponentów.
+Przykładem, gdzie jest już używany Injection Token jest np. moment, gdy w angular materialu używamy przekazywania danych ...
+
+constructor(  ====>  @Inject(MAT_DIALOG_DATA) public data: DialogData   <==== ) { }
+
+Przy pomocy Object.Assign() konfiguracja jest łączona z obecnym użyciem obiektu/elementu w tym komponencie.
+
+Aby można było skorzystać ze swojego obiektu konfiguracyjnego to musi zostać dostarczony na poziomie np. głównego modułu 
+i zarejestrować go w tablicy providers ...
+
+providers: [ {provide: FILE_UPLOADER_GLOBAL_CONFIG, useValue: { multiple: false }} ],
+====
+STUB
+"" - Stuby są to gotowe odpowiedzi na działania wykonywane podczas testu. Zwykle nie odpowiadają na nic innego poza
+tym co jest zaprogramowane w teście.
+
+Czyli jest to funkcja która zastępuje implementację oryginalnej funkcji i zwraca tylko oczekiwany wynik z pominięciem pozostałych
+właściwości tej funkcji. Dzięki temu podczas tesu nie jest wykonywana niepotrzebna komunikacja dzięki czemu oszczędza się 
+za równo pamięć jak i czas. 
+
+spy jest podobny do stuba z tym, że dzięki spyowi możemy obserwować to jak i kiedy jest używana funkcja. Np jakie argumenty
+zostały wysłane do funkcji.
+
+
+==================================
+UNIT TEST AAA - ARRANGE-ACT-ASSERT
+
+To sto podejście które stosuje się podczas budowania testu. Mówi ona o tym, że trzeba podzielić test na 3 części 
+arrange - przygotowanie 
+act - działanie
+assert - potwierdzenie
+
+=============================
+TDD - Test-driven development
+
+Programowanie sterowane testami - jest to proces, który polega na tym, że najpierw pisze się funkcjonalność w testach, 
+uwzględniając każdy przypadek. Każdy z nich na samym początku ma "czerwony" status. Natomiast w miarę pisania właściewgo
+kodu aplikacji jest stopniowy przyrost "zielonych" testów, czyli te które przeszły. Pisząc w ten sposób oczekiwanym wynikiem 
+jest to, że wszystkie testy będą na zielono. Jest to przeciwieństwo to standardowego podejścia pisania oprogramowania, ponieważ
+wtedy najpierw piszemy kod, a następnie piszemy testy do tego kodu.
+
+===============
+PIRAMIDA TESTÓW
+
+Mówi ona o hierarch, kosztowności i proporcjach pomiędzy testami.
+Piramidę testów można umieścić na układzie współrzędnych, gdzie osią poziomą jest ilość przypadków testowych
+(im dłuższy odcinek tym więcej), natomiast na osi pionowej czas wykonania i koszt utrzymania (im wyżej tym 
+wolniej i drożej).
+
+Rodzaje testów na piramidzie:
+* Testy jednostkowe.
+* Testy integracyjne.
+* Testy systemowe (End to end).
+
+Piramida mówi więc, że w projekcie powinniśmy robić najwięcej testów jednostkowych, bo są najtańsze w
+utrzymaniu i wykonują się najszybciej. Testy systemowe są powolne i drogie, dlatego powinniśmy robić 
+ich mało, a większość rzeczy sprawdzać na niższych poziomach.
+
+============================================
+Czym są testy jednostkowe i do czego służą ?
+
+Są to naprostrze testy jakie można wykonać w dzięki Angular CLI. Testy wykorzystują framework Jasmine i środowisko uruchomieniowe Karma.
+
+SĄ 3 RODZAJE TESTÓW:
+- TESTY INTEGRACYJNE - sprawdzają działanie i integrację po miedzy wieloma częściami składowymi aplikacji i jej zaspobami wewnętrznymi np bazy danych.
+- TESTY JEDNOSTKOWE - sprawdzają poprawność działania najmniejszych odizolowanych akcji - poprawne zachowanie w przypadku uruchomienia jakieś funkcji na przycisku ... 
+- TESTY E2E - te testy polegają na kompleksowym badaniu aplikacji na różnym sprzęcie i różnych przeglądarkach - symulacja prawdziwego użytkownika.
+Są bardzo czasochłonne i mają na celu sprawdzanie całych funkcjonalności aplikacji, np obsługę komentarzy pod postem.
+
+
+Jasmine - narzędzie niezależne od Angulara. Pozwala na testowanie najmniejszych fragmentów kodu.
+Angular sam też udostępnia funkcjonalności ułatwiające korzystanie z Jasmine.
+
+Karma - środowisko uruchomieniowe, która bada same działanie konkretnych fragmentów.
+Na podstawie tego generowany jest raport opowiadający o otestowaniu aplikacji.
+
+Czy potrzeba coś jeszcze wiecej powiedzieć na temat testów jednostkowych czy takie coś mniej więcej już wystaracza?
+
+===================
+Testy integracyjne
+
+Sprawdzają działanie i integrację po miedzy wieloma częściami składowymi aplikacji i jej zaspobami wewnętrznymi np.: bazy danych.
+Podobnymi rodzajami testów są też testy akceptacyjne oraz testy regresyjne.
+
+Testy regresyjne (regression tests) — po wprowadzeniu naszej zmiany uruchamiane są wszystkie testy w danej domenie biznesowej
+celem sprawdzenia czy zmiana nie spowodowała błędu w innej części systemu.
+
+Testy akceptacyjne (acceptance tests) — testy mające na celu odpowiedzieć na pytanie czy aplikacja spełnia wymagania biznesowe
+
+Testy integracyjne już są pisane opcjonalnie.
+W testach jednostowych mockujemy zachowanie innych modułów aplikacji, bądź same dane.
+W testach integracyjnych zaleca się właśnie uruchomienie inncyh wymaganych obaszarów aplikacji, aby sprawdzić ich integralność po między sobą.
+
+Różnice pomiędzy testami jednostkowymi, a testami integracyjnymi:
+    * Zależności:
+    	- Testowany jednostkowy element (klasa, metoda) w izolacji.
+        - Testowana więcej niż jedna wewnętrzna lub zewnętrzna zależność.
+    * Punkt awarii (failure point):	
+        - Tylko jeden potencjalny punkt awarii (jedna logiczna asercja per test*).	
+        - Wiele potencjalnych punktów awarii.
+    * Szybkość działania:
+        - Bardzo szybko, dużo poniżej 1 sekundy.
+        - Może trwać długo, ze względu na czasochłonne operacje np. dostęp do bazy danych, I/O, operacje na sesji.
+    * Konfiguracja:
+    	- Test jednostkowy musi działać na każdej maszynie bez dodatkowej konfiguracji.	
+        - Test integracyjny może być zależny od konfiguracji, np. machine.config (login/hasło) do bazy danych.
+
+=========
+Testy e2e
+
+Te testy polegają na kompleksowym badaniu aplikacji na różnym sprzęcie i różnych przeglądarkach - symulacja prawdziwego użytkownika.

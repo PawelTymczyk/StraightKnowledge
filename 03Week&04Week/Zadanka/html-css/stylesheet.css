@@ -1,0 +1,151 @@
+main {
+  margin: auto;
+  width: 960px;
+}
+
+/* Navigation */
+.navigation-box {
+  border: 2px solid grey;
+  height: 48px;
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  z-index: 2;
+}
+
+.navigation-content {
+  text-align: center;
+  transform: translate(0, 12px);
+}
+
+/* Advertisement */
+
+.advertisement {
+  background-image: url("./img/reklama.jfif");
+  width: 920px;
+  height: 320px;
+  border: none;
+}
+
+/* Covid table */
+
+.covid-article {
+  height: 64px;
+  background-color: red;
+}
+
+.covid-content {
+  color: white;
+  display: flex;
+}
+
+.covid-title {
+  text-transform: uppercase;
+  font-size: 20px;
+  background-color: red;
+  border: none;
+  margin: none;
+  padding: none;
+  height: 64px;
+  color: white;
+}
+
+.covid-data-row-data {
+  margin-left: 4px;
+  color: grey;
+  display: inline;
+}
+
+table,
+th:not(:last-child),
+td:not(:last-child) {
+  border-right: 1px solid white;
+  border-collapse: collapse;
+}
+
+th {
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 0 4px;
+}
+
+td {
+  font-size: 16px;
+  height: 32px;
+  padding: 0 4px;
+}
+
+.table-align {
+  margin: auto 0;
+  height: 48px;
+}
+
+.button-more {
+  margin: auto;
+  border: none;
+  border-radius: 4px;
+  height: 32px;
+  width: 68px;
+}
+
+/* Articles */
+
+.button-image-large {
+  border: none;
+  background-image: url("./img/big.jfif");
+  width: 620px;
+  height: 360px;
+  color: white;
+  font-size: 32px;
+
+  position: relative;
+}
+
+.button-image-small {
+  border: none;
+  background-image: url("./img/small.jfif");
+  width: 300px;
+  height: 180px;
+  color: white;
+  font-size: 24px;
+
+  position: relative;
+}
+
+.article-title-large,
+.article-title-small {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+.article-title-large:hover,
+.article-title-small:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+
+footer {
+  display: inline-flex;
+  font-size: 12px;
+}
+
+.copyrights {
+  display: inline-block;
+}
+
+ul li {
+  display: inline;
+  list-style: circle;
+  margin: 0 8px;
+  color: grey;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+}
+
+a:active {
+  text-decoration: underline;
+}

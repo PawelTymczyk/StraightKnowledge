@@ -2,8 +2,8 @@
 - 01Week-html           - html 
 - 01Week-css            - css: flex, grid
 - 02Week-progress       - progess in html and css
+- 03Week-javascript     - javascript
 
-- 03Week-               - 
 - 04Week-               - 
 - 05Week-               - 
 - 06Week-               - 

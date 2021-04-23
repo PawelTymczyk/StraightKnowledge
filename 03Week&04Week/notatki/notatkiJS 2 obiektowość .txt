@@ -1,0 +1,73 @@
+JAVASCRIPT
+
+            ========================== WIDEO - Obiektowość ==========================
+
+
+jeżeli użyjemy new na funkcji - staje się on obiektem, a same wywołanie funkcji jej konstruktorem->
+function A() { return 1; } // wtedy wartość returna w a jest nie wywoływana
+let a = new A();
+a - jest obiektem A
+
+
+a instanceof b - sprawdzanie czy obiekt a jest instancją klasy b - true/false 
+
+
+THIS - odwołuje się do samego siebie za równo w funkcji jak i w obiecie, na podstawie tego możemy uzyskać specyficne operacje, 
+jeżeli nie jeżeli funkcja jeszcze nie została przypisana do zmiennej (jako obiek oczywiście) 
+
+
+bind jest 2-stopniowym przypisaniem funkcji do nowego obiektu - dopisze właściwości w "kopii", 
+ale oryginał funkcji pozostawi niezmieniony
+
+
+przypisanie funkcji do nowej zmiennej powoduje, że traci ona tego thisa - nie będzie mogła już w sobie odwołać się do samej siebie 
+za pomocą thisa - kolejne nawiązanie do tej samej funkcji się tworzy i to z tego powodu się traci tą właściwość i można ją odzyskać
+np poprzez bindowanie funcji
+
+
+this odwołuje się tak jakby do tego co jest "przed kropką" - 
+
+let a = {fn: () => this;}
+a.fn() -> "opisany" this
+let callback = a.fn;
+callback() -> "nieopisany" this
+
+
+
+call vs apply
+
+obie wywołują funkcję do której są przypisane
+fn.call(a, b, c)    <==>    fn(b, c);                   - pierwszy parametr jest definiowaniem this'a, kolejne są odpowiednimi argumentami funkcji
+fn.apply(a, [b, c]) <==>    fn(...[b, c]);              - też pierwszy parametr to this, jednak parametry funckji podaje się jako tablicę 
+
+
+
+==== Virtual Table / jak to się robiło w C  ================    PYTANIE
+
+- Sama koncepcja spoko, uświadomiłem sobie, że sam kiedyś jak się bawiłem w dziedziczenie w C to też to robiłem trochę,
+ale czy ma to jakieś bezpośrednie przełożenie zastosowanie w JS?
+
+Michał prezentował to głównie z zamiarem, żeby lepiej były później rozumiane prototypy
+
+
+========== PROTOTYPE
+
+a.__proto__ === Object.getPrototypeOf(a)
+
+wszystko co jest przypisane do prototypu jest widoczne jako a.coś()
+
+Prototype - prototyp obiektu, w moim rozumieniu jest to obiekt wewnętrzny, którego instancja jest współdzielona pomiędzy
+wszystkimi obiektami posiadającymi ten prototyp np.: edycja length w prototypie w obiekcie A zmieni automatycznie wartość 
+w obiekcie B - ponieważ oba odnoszą się do tej samej instancji obiektu
+
+
+
+o co chodzi z super ??? 
+
+
+Pytania: 
+Czy bindowanie funkcji jest tak na prawdę tworzeniem reużwalnej funkcji?
+
+Jakiś dodatkowy materiał o PROTOTYPE, bo średnio to rozumiem ...?
+
+Prototype chodzi tylko o to, że to dosłownie jest prototyp danego obiektu?

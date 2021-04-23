@@ -1,0 +1,46 @@
+UŻYTECZNE RZECZY:
+
+HTML / CSS
+
+position: relative; - pozycjionuje element jako jego domyślny element
+position: absolute; - pozycionuje się względem jego najbliższego elementu relatywnego lub okna przeglądarki
+position: fixed; - na stałe przypięta do pozycji na ekranie
+
+position: sticky; - przełącza sie pomiędzy relatywnym, a fixed
+position: static; - default 
+
+JavaScript
+
+Strict Mode - Chodzi o to, że JavaScript umożliwa włączenie tego trybu - czyli trybu z konkretną wersją z JSa, 
+dzięki temu mogą być po cichu wyeliminowane niektóre błędy JS, jak i również niekiedy ten sam kod odpalony w 
+trybie restrykcyjnym wykona się trochę szybciej. Jednak trzeba mieć na uwadzę, że nie każda przeglądarka obsługuje
+tryb restrykcyjny i wtedy zamiast delikatnych poprawek dostaniemy błędy.
+'use strict'; - uruchomienie trybu strict
+
+
+Async - umożliwa odpalanie funkcji za pomocą słówka async. Taki zapis umożliwia to, że jeżeli inna funkcja oczekuje 
+na wynik tej to odszymuje Promise'a, czyli że informację, że tak funkcja się wykona i zwróci jej odpowiedni wynik
+gdy nadejdzie na to odpowiedni czas.
+
+
+
+for (const [key, value] of Object.entries(simplyObject))
+Object.entries() - zwraca dwie wartości klucz i wartość
+Object.keys() - zwraca same klucze
+
+JSON.parse(JSON.stringify(object)) - zrobienie głębokiej kopii
+
+robienie return'a w mapie nie zadziała tak jak się spodziewam
+
+Array.isArray()
+
+obejct.hasOwnProperty() - czy posiada taki klucz
+
+
+Uzupełnienie wiedzy:
+
+primitive root object - jest to tak na prawdę przedostatni element w łańcuchu prototypów, on zawiera
+ tylko __proto__ do null'a(który jest ostatnim primitywem) 
+
+(!!! WAŻNE !!!)
+więcej o this poczytaj

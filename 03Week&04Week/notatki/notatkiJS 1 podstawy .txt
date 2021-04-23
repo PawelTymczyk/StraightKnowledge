@@ -1,0 +1,132 @@
+JAVASCRIPT
+
+            ========================== WIDEO - Podstawy ==========================
+
+TYPY DANYCH:
+
+Typy proste:
+- null                          typ: object
+- undefined                     
+- number                        
+- string                        
+- boolean                       
+
+Typy złożone:
+- obiekty (wszelakiej maści)    typ: object
+- array'e                       typ: object
+- function                       
+- symbol                        
+
+Różnica - typy ptoste kopuije się wprost, typy złożone kopuije się przez referencje
+
+
+Funkcje 
+Rodzaje zapisu:
+* function () { return ... }
+* function name() { return ... }
+* () => { return ... }
+* () => ...
+
+*są anonimowe gdy - Funkcje bez nazw
+
+
+null oraz [] są nie intuicyjne, bo też maja typ "object"
+
+
+rzutowanie na booleana !!a -> najpierw zrzutuje wartość na false donosząc się do wartości, a później przerzuci się na true ->
+let a=2; => !!a => !!2 => !false => true
+
+
+== vs ===
+== - wartość taka sama;
+=== - wartość taka sama z tym samym typem
+
+NaN - not a number
+inNaN()
+
+** - potęgowanie -> 2**3 -> 2 do potęgi 3 -> 8
+
++'2' -> tworzy liczę ze stringa
++'a' -> NaN
+'' + true -> rzutowanie na stringa -> 'true'
+
+rodzaje zapisu stringa -> "" '' `` (to ostatnie to backtick)
+
+backticki interpretują też js -> można wykonać operacje matematyczne, ale tak na prawdę dowolny kod
+aby js zapisać w backtickach trzeba go umieścić w:   ${ treść kodu}
+
+
+Służą do iterowaniu się po obiektach - wypluwa indexy - lenght , name itd 
+for ... in
+
+służy po iterowaniu się po tablicy - wypluwa same wartości
+for ... of
+
+Operator spread - ... - jak się on nazywa po polsku
+Wyciąga zawartość z obiektu/ tablicy:
+a = [1, 2]
+b = [0, ...a, 3 ] <==> b = [0, 1, 2, 3] 
+Można w ten sposób po prostu "połączyć" 2 tablice
+
+spread działa tylko na obiektach iterowalnych
+
+Array.from( a ) <==> [ ...a ]
+
+
+
+Operacje na tablicach
+
+array.splice(a,b) - wytnij od elemntu a b(ilość) elementów
+array nadpisze, a sam zapis zwróci tylko usunięte elemety
+
+array.slice(a) - wytnij tablicę od elementu a do końca
+array.slice(a, b) - wytnik tablicę od elementu a do elementu b
+
+
+Do obiektu można się odwołać przez . i przez []:
+a.property <==> a[property]
+
+
+
+Destrukturyzacja i operator rest:
+
+let obj = { a:1 , b:2 , c:3 , d:[4] };
+
+Destrykturyzacja - 
+let {a, d} = obj;
+to jest to samo co
+let a = obj.a;
+let d = obj.d;
+
+Rest -
+let { a, d, ...rest } = obj;
+a => 1
+d => [4] 
+rest => {b: 2, c: 3}
+
+
+null to jest brak obiektu, undefined jest to obiekt, ale pusty lecz niezdefiniowany
+
+
+
+HOISTING
+trochę ciężko mi to wytłumaczyć na czym on polega?
+przenoszenie deklaracji funkcji oraz var na samą górę bloku funkcyjnego?
+
+
+Scope funkcyjny ???
+
+
+
+Notatka o ćwiczeniach:
+W ramach ćwiczeń i przyzwyczajenia się wszystko sobie testowałem w consoli weebowej, bo nie trzeba kombinować z całą strukturą html'a
+
+Pytania:
+Czy ma jakąś inną nazwę spread operator?
+- nie, nie ma innej nazwy
+
+Co to jest Garbage collector?
+- z ang śmieciaż. globalne rozwiązanie zarządzania nieużywanymi danymi -> kiedy dane są nie 
+wyszukiwalne/nieosiądalne wtedy ten system automatycznie zbiera je i usuwa
+
+================

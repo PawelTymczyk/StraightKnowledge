@@ -24,7 +24,8 @@ Najnowsza wersja przeglądarki Firefoxm 85 powoli zaczyna porzucać PWA
 JSONP (JSON with padding) - https://www.w3schools.com/js/js_json_jsonp.asp
 Historyczna technika odbierania danych elementów JS, który jest elementem przeznaczonym do ładowania zwykłego JS.
 
-XSS: https://sekurak.pl/czym-jest-xss/ - polega na wstrzyknięciu "obcego" kodu JS lub innego jezyka skryptowego do strony internetowej pododatnej na to. (innerHtml) 
+XSS: https://sekurak.pl/czym-jest-xss/ - polega na wstrzyknięciu "obcego" kodu JS lub innego jezyka skryptowego do strony internetowej 
+pododatnej na to. (innerHtml) 
 
 Sanitizing - jest podobny do XSS, ale polega na wstrzykiwaniu zapytań SQL
 
@@ -34,8 +35,8 @@ Polega na kontroli nad przepływem informacji.
 Phishing - polega na wyłudzenia poufnych informacji np.: danych logowania czy karty kreduytowej. Rodzaj ataku opartego na inżynieri społeczne.
 Najprościej mówiąc ten atak polega na podszywaniu się pod prawdziwe strony internetowe w celu wyłudzenia informacji.
 
-Service worker - Mechanizm Service Workers został wprowadzony w najnowszych wersjach przeglądarek internetowych, żeby rozwiązać problem, czyli jak powinna się zachowywać w
-przypadku utraty połączenia z Internetem.
+Service worker - Mechanizm Service Workers został wprowadzony w najnowszych wersjach przeglądarek internetowych, żeby rozwiązać problem, czyli jak powinna
+się zachowywać w przypadku utraty połączenia z Internetem.
 
 Web worker - jest to forma skryptu, który zostaje odpalony i w tym czasie wszystkie inne skrypty przestają działać/odpowiadać do czasu aż si wykona działanie web workera.
 

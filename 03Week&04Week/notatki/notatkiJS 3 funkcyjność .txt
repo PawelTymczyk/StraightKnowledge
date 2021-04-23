@@ -1,0 +1,70 @@
+JAVASCRIPT
+
+            ========================== WIDEO - Funkcyjność  ==========================
+
+
+Programowanie funkcyjne nadaje się do przetwarzania danych z serwera
+- do operowania arrayach i głęboko na obiektach
+- przydaje się do bibliotek operujacych na stanie np redux
+najlepiej sprawdza się na programowaniu synchronicznym
+
+
+
+Paradygmaty - zbiór pojęć i teorii tworzący jeden spójny zestaw:
+- proceduralny - głównie się skupia na czystym programowaniu linijka po linijce
+- obiektowy - głównie się skupia na programowaniu obiektowym
+- funkcyjny - funkcje zwracają funkcje które dalej gdzieś będą przetwarzane prawdopodobnie przez inne funkcje
+
+
+Składniki funkcyjnego programowania:
+- funkcje czyste i nie czyste
+- z nimi są powiązane side effects
+a następnie z composition, curringiem oraz rekursją(nie jest zoptymalizowana dlatego nie zaleca się używania tego do JS'a)
+
+
+* czyste funkcje - dostają argumenty, wykonują na nich operację i zwracają wynik. Nie modyfikują danych wejściowych 
+i nie pracują na żadnych innych funkcjach
+
+* nie czyste - wszystkie, które nie spełniają poprzednich warunków
+	- modyfikowanie zewnętrznych obiektów lub zmiennych
+	- wywoływanie funkcji nie czystych
+	- input/output
+		* rzeczy typu console log
+		* modyfikowanie DOMa
+		* operacje na plikach 
+		* requesty sieciowe
+
+Side effects:
+- efekty uboczne, czyli na funkcjach czystych testowanie jest banalne, bo zawsze jesteśmy w stanie przewidzieć 
+efekt działania funkcji i najczęściej do przetestowania jej wystarczy napisać tylko 1 test
+- z drugiej strony funkcje nieczyste często są nieprzewidywalne, ponieważ pomimo tych samych danych wejściowych może zwrócić 
+inną wartość np.: random
+
+Composition - funkcja compose, która odpowiada za komponowanie wielu funkcji w jedną oczekującą na wywołanie 
+*** funkcje podane w kompozycji poprawnie zbudowanej wykonają się od tyłu	
+*** kiedy chcemy by kompozycja leciała "normalnie" to wygląda to bardzo podobnie, a praktyką jest nazywaniem togo pipe
+/- fajnie to wygląda i widzę w tym potencjał nawet w obiektówym
+
+
+??:??- reprezentatywny przykład
+
+
+Currying - jest to rozbijanie funkcji wieloargunemtowej, na funkcję jedno argumentową z czego każda wywołuje kolejną w wynik
+czego odszymujemy dokoładnie ten sam wynik
+
+
+23:30 - reprezentatywny przykład
+
+
+- map - służy do wykonania mapowania na każdym elemencie tablicy i zwraca nową z wykonanymi czynnościami 
+np.: pomnóż każdy element razy 2, zwróć tablicę męszczyzn z tablicy postaci z kreskówek,
+sprawdzenie property gender na każdym elemencie tablicy
+
+- filter filtruje - poczytaj sobie jeszcze o tym
+
+- reducem - najlepiej się pobawić, zapamiętuje sobie ostatą wartość i parę innych rzeczy jeszcze robi - 
+jeżeli np.: wykonuje się go na tablicy 10 elementowej, to stworzy on pokoleji instancje 1 elementowej,
+później 2 elementowej , itd ...
+pierwszy argument jest właśnie nazywany akumolatorem - acc
+
+- tap - wykona wszystkie operacje na obiekcie po czym zignoruje jego wynik - obiekt pozostanie bez zmian 

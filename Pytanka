@@ -1,0 +1,263 @@
+Bazując na swojej wiedzy oraz planie naprawczym układam sobie pytania z obszarów z których nie czuję się pewnie by sobie je przećwiczyć.
+Albo po prostu wszystkie pytania tutaj zamieszczę.
+
+HTML & CSS
+
+1. Co to jest semantyczny HTML?
+
+2. Co to są tagi w HTMLu?
+
+3. CO nowego wprowadził HTML5?
+
+4. Znajomość znaczników ... 
+
+5. Wymień wszystkie rodzaje positions omów je, oraz podaj przykład użycia każdego z nich? (5)
+
+6. Od czego zależy pozycionowanie stron w przeglądarce?
+
+7. Co to jest i jak działa flex?
+
+8. Co to jest i jak działa grid?
+
+9. Jakie właściwości powinniśmy animować, a jakie nie?
+
+10. Co to są selektory css? /kolejność/
+
+11. Co to jest Box Model
+
+12. Jakie są modyfikatory selektorów? ( > + ~ )
+
+13. Gdzie możemy umieścić stylowanie.
+
+14. Jkie są salektory atrybutów i co odróżnia każdego z nich?
+
+Java Script
+
+1. Jak dzielimy typy?
+
+2. Wymień wszystkie typy proste oraz jaki mają typ? (5)
+
+3. Wymień wsyzstkie typy złożone oraz jaki mają typ? (4)
+
+4. Wymień 4 sposoby zapisu funkcji?
+
+5. Co to są funkcje anonimowe oraz jak się je tworzy?
+
+6. jaka jest różnica między == vs ===? Jak się nazywają oba operatory?
+
+7. Do czego służy for ... in
+
+8. Do czego służy for ... of
+
+9. Co to jest operator sperad oraz jak się go używa? Kiedy spread operator?
+
+10. Co to jest operator rest oraz jak się tego używa?
+
+11. Do to jest destrukturyzajca? Podaj jakieś przykłady?
+
+12. Co to jest Hoisting?
+
+13. Jakie mamy scope? (3)
+
+14. Co to jest garbage collector?
+
+15. Co to jest instanceof? Jak się tego używa?
+
+16. Co to jest obiekt?
+
+17. Co daje nam this?
+
+18. Co to jest bindowanie?
+
+19. Call vs apply
+
+20. Co to jest prototype?
+
+21. czym się różni __proto__ od prototype
+
+22. O co chodzi z super?
+
+23. Programowanie funkcyjne - co to, do czego się nadaje?
+
+24. Co to są czyste i nie czyst funkcje?
+
+25. Podaj przykłady operacji na array-u
+
+26. Podaj przykłady operacji na obiekcie?
+
+27. Co to jest DOM?
+
+28. Co to jest "strict mode" i do czego służy?
+
+29. Co to jest Event Loop?
+- jak amen w pacierzu
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
+
+
+Type Script
+
+1. Jakie są cechy TS'a które nie posiada JS - np.: co na nas wymusza?
+
+2. Wymień typy proste? (3)
+
+3. Wymień typy złożone? (3)
+
+4. Co to jest enum?
+
+5. Podaj przykład rzutowania?
+
+6. Co to są typy generyczne - generyki?
+
+7. Jak tworzymy własne typ generyczny?
+
+8. Wymień i opisz kilka wbudowane typów generycznych? (3)
+
+9. Jaka jest idea interfaceów w programowaniu? /////////////// do doczytania
+
+
+
+Angular
+
+1. Co to jest komponent?
+
+2. Co to jest dyrektywa?
+
+3. Co odróżnia komponent od dyrektywy?
+
+4. Wymień wszystkie Lifecycle hooks, raz się wywołuje czy wiele razy i kiedy się wywołuje? (8)
+
+5. Objaśnij Mechanizm detekcji zmian?
+
+6. Czym się różni defult od OnPush w ChangeDetection?
+
+7. Wymień kilka (4) wbudowanych pipe'ów angularowych i wytłumacz co robią? 
+
+8. Jak się tworzy własne pipe'y w angularze?
+
+9. Immutable oraz jakie daje korzyści korzystanie z tego podejścia?
+
+10. Co to jest CLI i wymień kilka(5) komend?
+
+11. Przekazywanie danych pomiędzy komponentami - wymień wszystkie 3 metody i opisz je?
+
+12. Idea serwisów oraz do czego je wykorzystujemy?
+
+13. Elementy składowe modułu - wymień i krótko opisz? (jest ich 5)
+
+14. ForRoot & ForChild?
+
+15. Opisz zasadę działa DI?
+
+16. Jak wstrzykujemy dane? (rejestracja i inicjacja w komponencie)
+
+17. Poziomy wstrzykiwań - drzewo wstrzyknięć?
+
+18. Objaśnij co to Injection Token?
+
+19. STUB? - //////////////// DOPISZ PEŁNĄŁ NAZWĘ JAKO PODPOWIEDŹ
+
+20. AAA? ARRANGE-ACT-ASSERT
+
+21. TDD? TEST-DRIVEN-DEVELOPMENT
+
+22. Piramida testów?
+
+23. Co to są testy jednostkowe i do czego służą?
+
+24. Co to są testy integracyjne i do czego służą?
+
+25. Co to są testy e2e i do czego służą?
+
+26. Jakie mamy podziały komponentów? Opowiedz o tym trochę? - (logiczne / prezentacyjne)
+
+27. Gdzie trzymamy logikę związaną z serwerem?
+
+28. Co oznacza pojęcie mockowania danych i jakie są jego zalety w testach?
+
+
+
+RxJs & NgRx
+
+1. Co to jest RxJs? - ReactiveX JavaScript
+
+2. Wymień użyteczne operatory - oraz do czego służą?
+- combineLatest
+- concat
+- merge
+- startWith
+- withLatestFrom
+
+- from
+- of
+
+- catchError
+
+- debounceTime 
+- distinctUnitchanged
+- filter  
+- take
+- takeUntil
+
+- bufferTime
+- concatMap
+- map 
+- mergeMap / filterMap
+- scan
+- switchMap
+
+- tap
+
+3. Wyjaśnij co to jest Subject?
+
+4. Wyjaśnij co to jest Observable?
+
+5. Wyjaśnij co to jest Observator?
+
+6. Wyjaśnij co to jest BehaviourSubject?
+
+7. Wyjaśnij co to jest ReplaySubject?
+
+8. Wyjaśnij co to jest AsyncSubject?
+
+9. Wyjaśnij pojęcie programowania reaktywnego?
+
+10. Co odróżnia Observable od Promise?
+
+11. Wyjaśnij co to NgRx?
+
+12. Objaśnij 4 składowe NgRx'a? 
+
+13. Czy wystarczy zbudować tylko te 4 pliki czy coś jeszcze?
+
+14. /////////// Jak zbudować pytanie o model stora? ///////////////
+
+
+WEB
+
+1. Jak działa mechanizm CORS? Co nam daje i jak należy z nim pracować?
+
+2. Czym jest PWA?
+
+3. Czym jest RWD?
+
+4. Co to jest service worker?
+
+5. Co to jest web worker?
+
+6. Co to jest JSONP?
+
+7. Na czym polega atak XSS? - domyślnie angular chroni przed nim
+
+8. Czym jest sanitizing?
+
+9. Czym jest MITM atak?
+
+10. Czym jest phising?
+
+
+Linki o ćwiczonek które warto jeszcze przerobić:
+
+https://codesandbox.io/s/empty-frost-7pv8h?file=/src/1-object-arrays.js
+https://codesandbox.io/s/angular-2-cwiczenie-1-forked-h3y47?file=/src/app/app.component.html:171-438
+
+
